@@ -1,0 +1,28 @@
+{
+ "note": "MetaQA / WikiMovies relation vocabulary (signal format, N4; reports/design_metaqa.md). cues: the verify script's lists (experiments/dataset/metaqa_verify.py, fixed before results, log 2026-11-04 12:30); nouns / ask: query wordings; kind: expected value kind; gaps: relations expected to lack cue words (verify cue coverage), used by scoring only.",
+ "relations": ["directed_by", "has_genre", "has_imdb_rating", "has_imdb_votes", "has_tags", "in_language", "release_year", "starred_actors", "written_by"],
+ "cues": {
+  "directed_by": ["directed", "director", "directs"],
+  "written_by": ["written", "writer", "screenplay", "wrote", "adapted", "script", "novel", "based on"],
+  "starred_actors": ["stars", "starring", "starred", "cast", "features", "featuring"],
+  "release_year": ["released", "release"],
+  "in_language": ["language"],
+  "has_genre": ["genre"],
+  "has_tags": [],
+  "has_imdb_rating": ["imdb", "rating"],
+  "has_imdb_votes": ["imdb", "votes"]
+ },
+ "nouns": {
+  "directed_by": ["director"], "written_by": ["writer", "screenwriter"], "starred_actors": ["actor", "star"],
+  "release_year": ["release year"], "in_language": ["language"], "has_genre": ["genre"], "has_tags": ["topic"],
+  "has_imdb_rating": ["imdb rating"], "has_imdb_votes": ["imdb votes"]
+ },
+ "ask": {
+  "directed_by": ["Who directed {D}?"], "written_by": ["Who wrote {D}?"], "starred_actors": ["Who starred in {D}?"],
+  "release_year": ["When was {D} released?"], "in_language": ["What language is {D} in?"],
+  "has_genre": ["What genre is {D}?"], "has_tags": ["What is {D} about?"],
+  "has_imdb_rating": ["How is {D} rated?"], "has_imdb_votes": ["How popular is {D}?"]
+ },
+ "kind": {"release_year": "date"},
+ "gaps": ["release_year", "in_language", "has_genre", "has_tags", "has_imdb_rating", "has_imdb_votes"]
+}

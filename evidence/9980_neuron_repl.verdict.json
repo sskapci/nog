@@ -1,0 +1,123 @@
+{
+ "checks": {
+  "R1": true,
+  "R2": true,
+  "R3": true,
+  "R4": true,
+  "R5": true,
+  "R6": true
+ },
+ "info": {
+  "kus": 6301,
+  "questions": 1000,
+  "r": 2,
+  "replicate_sent": 6301,
+  "death_1": {
+   "victim": "h2",
+   "victim_held": 2516,
+   "re_replicated": 2516,
+   "retried": 250,
+   "identical": 1000,
+   "incomplete": 0,
+   "P_identical": 1000,
+   "confirm_s": 2.6,
+   "takeover_s": 8.4
+  },
+  "death_2": {
+   "victim": "h4",
+   "victim_held": 3157,
+   "re_replicated": 3157,
+   "retried": 250,
+   "identical": 1000,
+   "incomplete": 0,
+   "P_identical": 1000,
+   "confirm_s": 2.6,
+   "takeover_s": 14.7
+  },
+  "not_here": 0,
+  "audits": [
+   {
+    "hosts": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "driver": 0,
+    "cold_text": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "cold_names": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "cold_files": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   {
+    "hosts": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "driver": 0,
+    "cold_text": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "cold_names": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "cold_files": [
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   {
+    "hosts": [
+     0,
+     0,
+     0
+    ],
+    "driver": 0,
+    "cold_text": [
+     0,
+     0,
+     0
+    ],
+    "cold_names": [
+     0,
+     0,
+     0
+    ],
+    "cold_files": [
+     0,
+     0,
+     0
+    ]
+   }
+  ]
+ },
+ "pass": true
+}

@@ -1,0 +1,1535 @@
+{
+ "n": 2000,
+ "labels": {
+  "neuron": "neurons (system)",
+  "first": "control: first fitting slot, same pipeline",
+  "oracle": "oracle neurons (gold labels): ceiling, measurement only",
+  "baseline": "baseline (not neurons), frozen chapter 2",
+  "onehost": "neurons, 1 host"
+ },
+ "em": {
+  "neuron": {
+   "n": 2000,
+   "em": 794,
+   "pct": 39.7,
+   "wilson": [
+    37.6,
+    41.9
+   ]
+  },
+  "first": {
+   "n": 2000,
+   "em": 576,
+   "pct": 28.8,
+   "wilson": [
+    26.9,
+    30.8
+   ]
+  },
+  "onehost": {
+   "n": 2000,
+   "em": 794,
+   "pct": 39.7,
+   "wilson": [
+    37.6,
+    41.9
+   ]
+  }
+ },
+ "confident_wrong": {
+  "neuron": 0,
+  "first": 7,
+  "onehost": 0
+ },
+ "confident": {
+  "neuron": 1,
+  "first": 9,
+  "onehost": 1
+ },
+ "abstention_pct": {
+  "neuron": 2.35,
+  "first": 7.5,
+  "onehost": 2.35
+ },
+ "by_type": {
+  "bridge_comparison": {
+   "neuron": {
+    "n": 437,
+    "em": 258,
+    "pct": 59.04,
+    "wilson": [
+     54.4,
+     63.6
+    ]
+   },
+   "first": {
+    "n": 437,
+    "em": 167,
+    "pct": 38.22,
+    "wilson": [
+     33.8,
+     42.9
+    ]
+   },
+   "onehost": {
+    "n": 437,
+    "em": 258,
+    "pct": 59.04,
+    "wilson": [
+     54.4,
+     63.6
+    ]
+   }
+  },
+  "comparison": {
+   "neuron": {
+    "n": 487,
+    "em": 355,
+    "pct": 72.9,
+    "wilson": [
+     68.8,
+     76.7
+    ]
+   },
+   "first": {
+    "n": 487,
+    "em": 386,
+    "pct": 79.26,
+    "wilson": [
+     75.4,
+     82.6
+    ]
+   },
+   "onehost": {
+    "n": 487,
+    "em": 355,
+    "pct": 72.9,
+    "wilson": [
+     68.8,
+     76.7
+    ]
+   }
+  },
+  "compositional": {
+   "neuron": {
+    "n": 822,
+    "em": 148,
+    "pct": 18.0,
+    "wilson": [
+     15.5,
+     20.8
+    ]
+   },
+   "first": {
+    "n": 822,
+    "em": 23,
+    "pct": 2.8,
+    "wilson": [
+     1.9,
+     4.2
+    ]
+   },
+   "onehost": {
+    "n": 822,
+    "em": 148,
+    "pct": 18.0,
+    "wilson": [
+     15.5,
+     20.8
+    ]
+   }
+  },
+  "inference": {
+   "neuron": {
+    "n": 254,
+    "em": 33,
+    "pct": 12.99,
+    "wilson": [
+     9.4,
+     17.7
+    ]
+   },
+   "first": {
+    "n": 254,
+    "em": 0,
+    "pct": 0.0,
+    "wilson": [
+     0.0,
+     1.5
+    ]
+   },
+   "onehost": {
+    "n": 254,
+    "em": 33,
+    "pct": 12.99,
+    "wilson": [
+     9.4,
+     17.7
+    ]
+   }
+  }
+ },
+ "by_group": {
+  "cue": {
+   "neuron": {
+    "n": 454,
+    "em": 85,
+    "pct": 18.72,
+    "wilson": [
+     15.4,
+     22.6
+    ]
+   },
+   "first": {
+    "n": 454,
+    "em": 11,
+    "pct": 2.42,
+    "wilson": [
+     1.4,
+     4.3
+    ]
+   },
+   "onehost": {
+    "n": 454,
+    "em": 85,
+    "pct": 18.72,
+    "wilson": [
+     15.4,
+     22.6
+    ]
+   }
+  },
+  "gap": {
+   "neuron": {
+    "n": 1546,
+    "em": 709,
+    "pct": 45.86,
+    "wilson": [
+     43.4,
+     48.4
+    ]
+   },
+   "first": {
+    "n": 1546,
+    "em": 565,
+    "pct": 36.55,
+    "wilson": [
+     34.2,
+     39.0
+    ]
+   },
+   "onehost": {
+    "n": 1546,
+    "em": 709,
+    "pct": 45.86,
+    "wilson": [
+     43.4,
+     48.4
+    ]
+   }
+  }
+ },
+ "cue_by_type": {
+  "bridge_comparison": {
+   "neuron": {
+    "n": 0,
+    "em": 0,
+    "pct": null,
+    "wilson": null
+   },
+   "first": {
+    "n": 0,
+    "em": 0,
+    "pct": null,
+    "wilson": null
+   },
+   "onehost": {
+    "n": 0,
+    "em": 0,
+    "pct": null,
+    "wilson": null
+   }
+  },
+  "comparison": {
+   "neuron": {
+    "n": 18,
+    "em": 16,
+    "pct": 88.89,
+    "wilson": [
+     67.2,
+     96.9
+    ]
+   },
+   "first": {
+    "n": 18,
+    "em": 11,
+    "pct": 61.11,
+    "wilson": [
+     38.6,
+     79.7
+    ]
+   },
+   "onehost": {
+    "n": 18,
+    "em": 16,
+    "pct": 88.89,
+    "wilson": [
+     67.2,
+     96.9
+    ]
+   }
+  },
+  "compositional": {
+   "neuron": {
+    "n": 182,
+    "em": 36,
+    "pct": 19.78,
+    "wilson": [
+     14.6,
+     26.2
+    ]
+   },
+   "first": {
+    "n": 182,
+    "em": 0,
+    "pct": 0.0,
+    "wilson": [
+     0.0,
+     2.1
+    ]
+   },
+   "onehost": {
+    "n": 182,
+    "em": 36,
+    "pct": 19.78,
+    "wilson": [
+     14.6,
+     26.2
+    ]
+   }
+  },
+  "inference": {
+   "neuron": {
+    "n": 254,
+    "em": 33,
+    "pct": 12.99,
+    "wilson": [
+     9.4,
+     17.7
+    ]
+   },
+   "first": {
+    "n": 254,
+    "em": 0,
+    "pct": 0.0,
+    "wilson": [
+     0.0,
+     1.5
+    ]
+   },
+   "onehost": {
+    "n": 254,
+    "em": 33,
+    "pct": 12.99,
+    "wilson": [
+     9.4,
+     17.7
+    ]
+   }
+  }
+ },
+ "by_relation": {
+  "director": {
+   "gap": false,
+   "neuron": {
+    "n": 753,
+    "em": 348,
+    "pct": 46.22,
+    "wilson": [
+     42.7,
+     49.8
+    ]
+   },
+   "first": {
+    "n": 753,
+    "em": 182,
+    "pct": 24.17,
+    "wilson": [
+     21.2,
+     27.4
+    ]
+   },
+   "onehost": {
+    "n": 753,
+    "em": 348,
+    "pct": 46.22,
+    "wilson": [
+     42.7,
+     49.8
+    ]
+   }
+  },
+  "father": {
+   "gap": false,
+   "neuron": {
+    "n": 425,
+    "em": 56,
+    "pct": 13.18,
+    "wilson": [
+     10.3,
+     16.7
+    ]
+   },
+   "first": {
+    "n": 425,
+    "em": 4,
+    "pct": 0.94,
+    "wilson": [
+     0.4,
+     2.4
+    ]
+   },
+   "onehost": {
+    "n": 425,
+    "em": 56,
+    "pct": 13.18,
+    "wilson": [
+     10.3,
+     16.7
+    ]
+   }
+  },
+  "date of birth": {
+   "gap": true,
+   "neuron": {
+    "n": 419,
+    "em": 259,
+    "pct": 61.81,
+    "wilson": [
+     57.1,
+     66.3
+    ]
+   },
+   "first": {
+    "n": 419,
+    "em": 221,
+    "pct": 52.74,
+    "wilson": [
+     48.0,
+     57.5
+    ]
+   },
+   "onehost": {
+    "n": 419,
+    "em": 259,
+    "pct": 61.81,
+    "wilson": [
+     57.1,
+     66.3
+    ]
+   }
+  },
+  "place of birth": {
+   "gap": true,
+   "neuron": {
+    "n": 255,
+    "em": 55,
+    "pct": 21.57,
+    "wilson": [
+     17.0,
+     27.0
+    ]
+   },
+   "first": {
+    "n": 255,
+    "em": 8,
+    "pct": 3.14,
+    "wilson": [
+     1.6,
+     6.1
+    ]
+   },
+   "onehost": {
+    "n": 255,
+    "em": 55,
+    "pct": 21.57,
+    "wilson": [
+     17.0,
+     27.0
+    ]
+   }
+  },
+  "date of death": {
+   "gap": true,
+   "neuron": {
+    "n": 239,
+    "em": 125,
+    "pct": 52.3,
+    "wilson": [
+     46.0,
+     58.5
+    ]
+   },
+   "first": {
+    "n": 239,
+    "em": 69,
+    "pct": 28.87,
+    "wilson": [
+     23.5,
+     34.9
+    ]
+   },
+   "onehost": {
+    "n": 239,
+    "em": 125,
+    "pct": 52.3,
+    "wilson": [
+     46.0,
+     58.5
+    ]
+   }
+  },
+  "country of citizenship": {
+   "gap": true,
+   "neuron": {
+    "n": 205,
+    "em": 33,
+    "pct": 16.1,
+    "wilson": [
+     11.7,
+     21.7
+    ]
+   },
+   "first": {
+    "n": 205,
+    "em": 33,
+    "pct": 16.1,
+    "wilson": [
+     11.7,
+     21.7
+    ]
+   },
+   "onehost": {
+    "n": 205,
+    "em": 33,
+    "pct": 16.1,
+    "wilson": [
+     11.7,
+     21.7
+    ]
+   }
+  },
+  "spouse": {
+   "gap": false,
+   "neuron": {
+    "n": 202,
+    "em": 40,
+    "pct": 19.8,
+    "wilson": [
+     14.9,
+     25.8
+    ]
+   },
+   "first": {
+    "n": 202,
+    "em": 1,
+    "pct": 0.5,
+    "wilson": [
+     0.1,
+     2.8
+    ]
+   },
+   "onehost": {
+    "n": 202,
+    "em": 40,
+    "pct": 19.8,
+    "wilson": [
+     14.9,
+     25.8
+    ]
+   }
+  },
+  "publication date": {
+   "gap": true,
+   "neuron": {
+    "n": 184,
+    "em": 176,
+    "pct": 95.65,
+    "wilson": [
+     91.7,
+     97.8
+    ]
+   },
+   "first": {
+    "n": 184,
+    "em": 180,
+    "pct": 97.83,
+    "wilson": [
+     94.5,
+     99.2
+    ]
+   },
+   "onehost": {
+    "n": 184,
+    "em": 176,
+    "pct": 95.65,
+    "wilson": [
+     91.7,
+     97.8
+    ]
+   }
+  },
+  "place of death": {
+   "gap": true,
+   "neuron": {
+    "n": 168,
+    "em": 27,
+    "pct": 16.07,
+    "wilson": [
+     11.3,
+     22.4
+    ]
+   },
+   "first": {
+    "n": 168,
+    "em": 0,
+    "pct": 0.0,
+    "wilson": [
+     0.0,
+     2.2
+    ]
+   },
+   "onehost": {
+    "n": 168,
+    "em": 27,
+    "pct": 16.07,
+    "wilson": [
+     11.3,
+     22.4
+    ]
+   }
+  },
+  "mother": {
+   "gap": false,
+   "neuron": {
+    "n": 164,
+    "em": 11,
+    "pct": 6.71,
+    "wilson": [
+     3.8,
+     11.6
+    ]
+   },
+   "first": {
+    "n": 164,
+    "em": 0,
+    "pct": 0.0,
+    "wilson": [
+     0.0,
+     2.3
+    ]
+   },
+   "onehost": {
+    "n": 164,
+    "em": 11,
+    "pct": 6.71,
+    "wilson": [
+     3.8,
+     11.6
+    ]
+   }
+  },
+  "performer": {
+   "gap": false,
+   "neuron": {
+    "n": 59,
+    "em": 7,
+    "pct": 11.86,
+    "wilson": [
+     5.9,
+     22.5
+    ]
+   },
+   "first": {
+    "n": 59,
+    "em": 0,
+    "pct": 0.0,
+    "wilson": [
+     0.0,
+     6.1
+    ]
+   },
+   "onehost": {
+    "n": 59,
+    "em": 7,
+    "pct": 11.86,
+    "wilson": [
+     5.9,
+     22.5
+    ]
+   }
+  },
+  "country of origin": {
+   "gap": true,
+   "neuron": {
+    "n": 56,
+    "em": 24,
+    "pct": 42.86,
+    "wilson": [
+     30.8,
+     55.9
+    ]
+   },
+   "first": {
+    "n": 56,
+    "em": 39,
+    "pct": 69.64,
+    "wilson": [
+     56.7,
+     80.1
+    ]
+   },
+   "onehost": {
+    "n": 56,
+    "em": 24,
+    "pct": 42.86,
+    "wilson": [
+     30.8,
+     55.9
+    ]
+   }
+  },
+  "country": {
+   "gap": true,
+   "neuron": {
+    "n": 48,
+    "em": 17,
+    "pct": 35.42,
+    "wilson": [
+     23.4,
+     49.6
+    ]
+   },
+   "first": {
+    "n": 48,
+    "em": 20,
+    "pct": 41.67,
+    "wilson": [
+     28.8,
+     55.7
+    ]
+   },
+   "onehost": {
+    "n": 48,
+    "em": 17,
+    "pct": 35.42,
+    "wilson": [
+     23.4,
+     49.6
+    ]
+   }
+  },
+  "composer": {
+   "gap": false,
+   "neuron": {
+    "n": 42,
+    "em": 6,
+    "pct": 14.29,
+    "wilson": [
+     6.7,
+     27.8
+    ]
+   },
+   "first": {
+    "n": 42,
+    "em": 1,
+    "pct": 2.38,
+    "wilson": [
+     0.4,
+     12.3
+    ]
+   },
+   "onehost": {
+    "n": 42,
+    "em": 6,
+    "pct": 14.29,
+    "wilson": [
+     6.7,
+     27.8
+    ]
+   }
+  },
+  "educated at": {
+   "gap": false,
+   "neuron": {
+    "n": 38,
+    "em": 7,
+    "pct": 18.42,
+    "wilson": [
+     9.2,
+     33.4
+    ]
+   },
+   "first": {
+    "n": 38,
+    "em": 0,
+    "pct": 0.0,
+    "wilson": [
+     0.0,
+     9.2
+    ]
+   },
+   "onehost": {
+    "n": 38,
+    "em": 7,
+    "pct": 18.42,
+    "wilson": [
+     9.2,
+     33.4
+    ]
+   }
+  },
+  "place of burial": {
+   "gap": false,
+   "neuron": {
+    "n": 33,
+    "em": 8,
+    "pct": 24.24,
+    "wilson": [
+     12.8,
+     41.0
+    ]
+   },
+   "first": {
+    "n": 33,
+    "em": 0,
+    "pct": 0.0,
+    "wilson": [
+     0.0,
+     10.4
+    ]
+   },
+   "onehost": {
+    "n": 33,
+    "em": 8,
+    "pct": 24.24,
+    "wilson": [
+     12.8,
+     41.0
+    ]
+   }
+  },
+  "employer": {
+   "gap": false,
+   "neuron": {
+    "n": 19,
+    "em": 0,
+    "pct": 0.0,
+    "wilson": [
+     0.0,
+     16.8
+    ]
+   },
+   "first": {
+    "n": 19,
+    "em": 0,
+    "pct": 0.0,
+    "wilson": [
+     0.0,
+     16.8
+    ]
+   },
+   "onehost": {
+    "n": 19,
+    "em": 0,
+    "pct": 0.0,
+    "wilson": [
+     0.0,
+     16.8
+    ]
+   }
+  },
+  "founded by": {
+   "gap": false,
+   "neuron": {
+    "n": 17,
+    "em": 2,
+    "pct": 11.76,
+    "wilson": [
+     3.3,
+     34.3
+    ]
+   },
+   "first": {
+    "n": 17,
+    "em": 0,
+    "pct": 0.0,
+    "wilson": [
+     0.0,
+     18.4
+    ]
+   },
+   "onehost": {
+    "n": 17,
+    "em": 2,
+    "pct": 11.76,
+    "wilson": [
+     3.3,
+     34.3
+    ]
+   }
+  },
+  "award received": {
+   "gap": false,
+   "neuron": {
+    "n": 17,
+    "em": 3,
+    "pct": 17.65,
+    "wilson": [
+     6.2,
+     41.0
+    ]
+   },
+   "first": {
+    "n": 17,
+    "em": 0,
+    "pct": 0.0,
+    "wilson": [
+     0.0,
+     18.4
+    ]
+   },
+   "onehost": {
+    "n": 17,
+    "em": 3,
+    "pct": 17.65,
+    "wilson": [
+     6.2,
+     41.0
+    ]
+   }
+  },
+  "sibling": {
+   "gap": false,
+   "neuron": {
+    "n": 15,
+    "em": 0,
+    "pct": 0.0,
+    "wilson": [
+     -0.0,
+     20.4
+    ]
+   },
+   "first": {
+    "n": 15,
+    "em": 0,
+    "pct": 0.0,
+    "wilson": [
+     -0.0,
+     20.4
+    ]
+   },
+   "onehost": {
+    "n": 15,
+    "em": 0,
+    "pct": 0.0,
+    "wilson": [
+     -0.0,
+     20.4
+    ]
+   }
+  },
+  "cause of death": {
+   "gap": false,
+   "neuron": {
+    "n": 14,
+    "em": 0,
+    "pct": 0.0,
+    "wilson": [
+     0.0,
+     21.5
+    ]
+   },
+   "first": {
+    "n": 14,
+    "em": 0,
+    "pct": 0.0,
+    "wilson": [
+     0.0,
+     21.5
+    ]
+   },
+   "onehost": {
+    "n": 14,
+    "em": 0,
+    "pct": 0.0,
+    "wilson": [
+     0.0,
+     21.5
+    ]
+   }
+  },
+  "child": {
+   "gap": false,
+   "neuron": {
+    "n": 14,
+    "em": 4,
+    "pct": 28.57,
+    "wilson": [
+     11.7,
+     54.6
+    ]
+   },
+   "first": {
+    "n": 14,
+    "em": 0,
+    "pct": 0.0,
+    "wilson": [
+     0.0,
+     21.5
+    ]
+   },
+   "onehost": {
+    "n": 14,
+    "em": 4,
+    "pct": 28.57,
+    "wilson": [
+     11.7,
+     54.6
+    ]
+   }
+  },
+  "inception": {
+   "gap": false,
+   "neuron": {
+    "n": 11,
+    "em": 10,
+    "pct": 90.91,
+    "wilson": [
+     62.3,
+     98.4
+    ]
+   },
+   "first": {
+    "n": 11,
+    "em": 10,
+    "pct": 90.91,
+    "wilson": [
+     62.3,
+     98.4
+    ]
+   },
+   "onehost": {
+    "n": 11,
+    "em": 10,
+    "pct": 90.91,
+    "wilson": [
+     62.3,
+     98.4
+    ]
+   }
+  },
+  "producer": {
+   "gap": false,
+   "neuron": {
+    "n": 7,
+    "em": 5,
+    "pct": 71.43,
+    "wilson": [
+     35.9,
+     91.8
+    ]
+   },
+   "first": {
+    "n": 7,
+    "em": 2,
+    "pct": 28.57,
+    "wilson": [
+     8.2,
+     64.1
+    ]
+   },
+   "onehost": {
+    "n": 7,
+    "em": 5,
+    "pct": 71.43,
+    "wilson": [
+     35.9,
+     91.8
+    ]
+   }
+  },
+  "has part": {
+   "gap": false,
+   "neuron": {
+    "n": 4,
+    "em": 0,
+    "pct": 0.0,
+    "wilson": [
+     0.0,
+     49.0
+    ]
+   },
+   "first": {
+    "n": 4,
+    "em": 0,
+    "pct": 0.0,
+    "wilson": [
+     0.0,
+     49.0
+    ]
+   },
+   "onehost": {
+    "n": 4,
+    "em": 0,
+    "pct": 0.0,
+    "wilson": [
+     0.0,
+     49.0
+    ]
+   }
+  },
+  "publisher": {
+   "gap": false,
+   "neuron": {
+    "n": 3,
+    "em": 0,
+    "pct": 0.0,
+    "wilson": [
+     0.0,
+     56.2
+    ]
+   },
+   "first": {
+    "n": 3,
+    "em": 0,
+    "pct": 0.0,
+    "wilson": [
+     0.0,
+     56.2
+    ]
+   },
+   "onehost": {
+    "n": 3,
+    "em": 0,
+    "pct": 0.0,
+    "wilson": [
+     0.0,
+     56.2
+    ]
+   }
+  },
+  "editor": {
+   "gap": false,
+   "neuron": {
+    "n": 2,
+    "em": 0,
+    "pct": 0.0,
+    "wilson": [
+     0.0,
+     65.8
+    ]
+   },
+   "first": {
+    "n": 2,
+    "em": 0,
+    "pct": 0.0,
+    "wilson": [
+     0.0,
+     65.8
+    ]
+   },
+   "onehost": {
+    "n": 2,
+    "em": 0,
+    "pct": 0.0,
+    "wilson": [
+     0.0,
+     65.8
+    ]
+   }
+  },
+  "manufacturer": {
+   "gap": false,
+   "neuron": {
+    "n": 2,
+    "em": 0,
+    "pct": 0.0,
+    "wilson": [
+     0.0,
+     65.8
+    ]
+   },
+   "first": {
+    "n": 2,
+    "em": 1,
+    "pct": 50.0,
+    "wilson": [
+     9.5,
+     90.5
+    ]
+   },
+   "onehost": {
+    "n": 2,
+    "em": 0,
+    "pct": 0.0,
+    "wilson": [
+     0.0,
+     65.8
+    ]
+   }
+  },
+  "doctoral advisor": {
+   "gap": false,
+   "neuron": {
+    "n": 1,
+    "em": 0,
+    "pct": 0.0,
+    "wilson": [
+     0.0,
+     79.3
+    ]
+   },
+   "first": {
+    "n": 1,
+    "em": 0,
+    "pct": 0.0,
+    "wilson": [
+     0.0,
+     79.3
+    ]
+   },
+   "onehost": {
+    "n": 1,
+    "em": 0,
+    "pct": 0.0,
+    "wilson": [
+     0.0,
+     79.3
+    ]
+   }
+  },
+  "occupation": {
+   "gap": false,
+   "neuron": {
+    "n": 1,
+    "em": 0,
+    "pct": 0.0,
+    "wilson": [
+     0.0,
+     79.3
+    ]
+   },
+   "first": {
+    "n": 1,
+    "em": 0,
+    "pct": 0.0,
+    "wilson": [
+     0.0,
+     79.3
+    ]
+   },
+   "onehost": {
+    "n": 1,
+    "em": 0,
+    "pct": 0.0,
+    "wilson": [
+     0.0,
+     79.3
+    ]
+   }
+  },
+  "creator": {
+   "gap": false,
+   "neuron": {
+    "n": 1,
+    "em": 0,
+    "pct": 0.0,
+    "wilson": [
+     0.0,
+     79.3
+    ]
+   },
+   "first": {
+    "n": 1,
+    "em": 0,
+    "pct": 0.0,
+    "wilson": [
+     0.0,
+     79.3
+    ]
+   },
+   "onehost": {
+    "n": 1,
+    "em": 0,
+    "pct": 0.0,
+    "wilson": [
+     0.0,
+     79.3
+    ]
+   }
+  },
+  "student of": {
+   "gap": false,
+   "neuron": {
+    "n": 1,
+    "em": 0,
+    "pct": 0.0,
+    "wilson": [
+     0.0,
+     79.3
+    ]
+   },
+   "first": {
+    "n": 1,
+    "em": 0,
+    "pct": 0.0,
+    "wilson": [
+     0.0,
+     79.3
+    ]
+   },
+   "onehost": {
+    "n": 1,
+    "em": 0,
+    "pct": 0.0,
+    "wilson": [
+     0.0,
+     79.3
+    ]
+   }
+  }
+ },
+ "mcnemar_neuron_vs_first": [
+  332,
+  114,
+  9.054452729504695e-26
+ ],
+ "mcnemar_by_type": {
+  "bridge_comparison": [
+   144,
+   53,
+   6.566116686417369e-11
+  ],
+  "comparison": [
+   18,
+   49,
+   0.0001942977864148144
+  ],
+  "compositional": [
+   137,
+   12,
+   4.865181652869792e-28
+  ],
+  "inference": [
+   33,
+   0,
+   2.3283064365386963e-10
+  ]
+ },
+ "hop2": {
+  "neuron": {
+   "bridge_comparison": {
+    "chains_needing_hop2": 874,
+    "reached_hop2": 872,
+    "dont_know_at_hop2": 9,
+    "dont_know_rate_pct": 1.0,
+    "f_below_0.5_at_hop2": 533
+   },
+   "comparison": {
+    "chains_needing_hop2": 12,
+    "reached_hop2": 12,
+    "dont_know_at_hop2": 1,
+    "dont_know_rate_pct": 8.3,
+    "f_below_0.5_at_hop2": 10
+   },
+   "compositional": {
+    "chains_needing_hop2": 822,
+    "reached_hop2": 821,
+    "dont_know_at_hop2": 26,
+    "dont_know_rate_pct": 3.2,
+    "f_below_0.5_at_hop2": 505
+   },
+   "inference": {
+    "chains_needing_hop2": 254,
+    "reached_hop2": 254,
+    "dont_know_at_hop2": 6,
+    "dont_know_rate_pct": 2.4,
+    "f_below_0.5_at_hop2": 76
+   }
+  },
+  "first": {
+   "bridge_comparison": {
+    "chains_needing_hop2": 874,
+    "reached_hop2": 872,
+    "dont_know_at_hop2": 74,
+    "dont_know_rate_pct": 8.5,
+    "f_below_0.5_at_hop2": 74
+   },
+   "comparison": {
+    "chains_needing_hop2": 12,
+    "reached_hop2": 12,
+    "dont_know_at_hop2": 1,
+    "dont_know_rate_pct": 8.3,
+    "f_below_0.5_at_hop2": 1
+   },
+   "compositional": {
+    "chains_needing_hop2": 822,
+    "reached_hop2": 821,
+    "dont_know_at_hop2": 33,
+    "dont_know_rate_pct": 4.0,
+    "f_below_0.5_at_hop2": 33
+   },
+   "inference": {
+    "chains_needing_hop2": 254,
+    "reached_hop2": 254,
+    "dont_know_at_hop2": 14,
+    "dont_know_rate_pct": 5.5,
+    "f_below_0.5_at_hop2": 14
+   }
+  },
+  "onehost": {
+   "bridge_comparison": {
+    "chains_needing_hop2": 874,
+    "reached_hop2": 872,
+    "dont_know_at_hop2": 9,
+    "dont_know_rate_pct": 1.0,
+    "f_below_0.5_at_hop2": 533
+   },
+   "comparison": {
+    "chains_needing_hop2": 12,
+    "reached_hop2": 12,
+    "dont_know_at_hop2": 1,
+    "dont_know_rate_pct": 8.3,
+    "f_below_0.5_at_hop2": 10
+   },
+   "compositional": {
+    "chains_needing_hop2": 822,
+    "reached_hop2": 821,
+    "dont_know_at_hop2": 26,
+    "dont_know_rate_pct": 3.2,
+    "f_below_0.5_at_hop2": 505
+   },
+   "inference": {
+    "chains_needing_hop2": 254,
+    "reached_hop2": 254,
+    "dont_know_at_hop2": 6,
+    "dont_know_rate_pct": 2.4,
+    "f_below_0.5_at_hop2": 76
+   }
+  }
+ },
+ "K_identical": [
+  2000,
+  2000
+ ],
+ "audit_after": [
+  0,
+  0,
+  0,
+  0,
+  0,
+  0
+ ],
+ "audit_before_drop": [
+  9960,
+  9754,
+  10270,
+  9676,
+  10502
+ ],
+ "incomplete": {
+  "A": 0,
+  "B": 0
+ },
+ "routing": {
+  "hop_pointer": 2562,
+  "hop_broadcast": 1356,
+  "hop_literal_end": 0,
+  "dont_know": 92,
+  "forward_same_host": 876,
+  "forward_other_host": 3042,
+  "tasks_in": 9766,
+  "batches_in": 480,
+  "not_here": 0
+ },
+ "cost": {
+  "train_wall_s": 3013.8,
+  "wire_wall_s": 8.7,
+  "pass_B_wall_s": 39.6,
+  "train": [
+   {
+    "n": 2800,
+    "resumed": 0,
+    "cpu_s_per_ku": 0.899,
+    "params_mean": 38793.78857142857
+   },
+   {
+    "n": 2746,
+    "resumed": 0,
+    "cpu_s_per_ku": 0.9017,
+    "params_mean": 38787.919883466864
+   },
+   {
+    "n": 2912,
+    "resumed": 0,
+    "cpu_s_per_ku": 0.8936,
+    "params_mean": 38779.7864010989
+   },
+   {
+    "n": 2768,
+    "resumed": 0,
+    "cpu_s_per_ku": 0.8927,
+    "params_mean": 38743.523843930634
+   },
+   {
+    "n": 2888,
+    "resumed": 0,
+    "cpu_s_per_ku": 0.8991,
+    "params_mean": 38799.75207756233
+   }
+  ],
+  "wire": [
+   {
+    "n_slots": 24095,
+    "pointers": 1280
+   },
+   {
+    "n_slots": 23457,
+    "pointers": 1202
+   },
+   {
+    "n_slots": 24686,
+    "pointers": 1235
+   },
+   {
+    "n_slots": 22940,
+    "pointers": 1149
+   },
+   {
+    "n_slots": 24987,
+    "pointers": 1311
+   }
+  ]
+ },
+ "checks": {
+  "K": true,
+  "audit_zero": true,
+  "audit_sees_text": true,
+  "complete": true,
+  "five_eq_one": true
+ },
+ "bars": {
+  "compositional": 17,
+  "inference": 8
+ },
+ "bar_ok": {
+  "compositional": true,
+  "inference": true
+ },
+ "tier": "FLIES",
+ "pass": {
+  "passed": true,
+  "tier": "FLIES"
+ }
+}

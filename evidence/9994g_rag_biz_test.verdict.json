@@ -1,0 +1,244 @@
+{
+ "note": "baseline (not neurons)",
+ "questions": 630,
+ "arms": {
+  "r15": {
+   "rows": 630,
+   "exact": 120,
+   "exact_pct": 19.05,
+   "exact_wilson": [
+    16.2,
+    22.3
+   ],
+   "exact_on_neuron_covered": {
+    "n": 378,
+    "exact": 88,
+    "pct": 23.28,
+    "wilson": [
+     19.3,
+     27.8
+    ]
+   },
+   "by_cell": {
+    "1h_company": {
+     "n": 126,
+     "exact": 83,
+     "exact_pct": 65.87,
+     "exact_wilson": [
+      57.2,
+      73.6
+     ]
+    },
+    "1h_value": {
+     "n": 126,
+     "exact": 17,
+     "exact_pct": 13.49,
+     "exact_wilson": [
+      8.6,
+      20.5
+     ]
+    },
+    "1h_year": {
+     "n": 126,
+     "exact": 15,
+     "exact_pct": 11.9,
+     "exact_wilson": [
+      7.3,
+      18.7
+     ]
+    },
+    "2h_company": {
+     "n": 126,
+     "exact": 3,
+     "exact_pct": 2.38,
+     "exact_wilson": [
+      0.8,
+      6.8
+     ]
+    },
+    "2h_value": {
+     "n": 126,
+     "exact": 2,
+     "exact_pct": 1.59,
+     "exact_wilson": [
+      0.4,
+      5.6
+     ]
+    }
+   },
+   "wall_s": {
+    "mean": 43.638,
+    "median": 36.392
+   },
+   "cpu_s_client": {
+    "mean": 3.13,
+    "median": 3.639
+   },
+   "cpu_s_server": {
+    "mean": 185.996,
+    "median": 152.355
+   },
+   "mcnemar_vs_neuron": {
+    "neuron_only": 4,
+    "rag_only": 61,
+    "p": 3.918664438079533e-14
+   },
+   "mcnemar_vs_neuron_by_cell": {
+    "1h_company": {
+     "neuron_only": 4,
+     "rag_only": 56,
+     "p": 9.084503982403902e-13
+    },
+    "2h_company": {
+     "neuron_only": 0,
+     "rag_only": 3,
+     "p": 0.25
+    },
+    "2h_value": {
+     "neuron_only": 0,
+     "rag_only": 2,
+     "p": 0.5
+    }
+   }
+  },
+  "r7": {
+   "rows": 630,
+   "exact": 245,
+   "exact_pct": 38.89,
+   "exact_wilson": [
+    35.2,
+    42.8
+   ],
+   "exact_on_neuron_covered": {
+    "n": 378,
+    "exact": 118,
+    "pct": 31.22,
+    "wilson": [
+     26.8,
+     36.1
+    ]
+   },
+   "by_cell": {
+    "1h_company": {
+     "n": 126,
+     "exact": 107,
+     "exact_pct": 84.92,
+     "exact_wilson": [
+      77.6,
+      90.1
+     ]
+    },
+    "1h_value": {
+     "n": 126,
+     "exact": 22,
+     "exact_pct": 17.46,
+     "exact_wilson": [
+      11.8,
+      25.0
+     ]
+    },
+    "1h_year": {
+     "n": 126,
+     "exact": 105,
+     "exact_pct": 83.33,
+     "exact_wilson": [
+      75.9,
+      88.8
+     ]
+    },
+    "2h_company": {
+     "n": 126,
+     "exact": 5,
+     "exact_pct": 3.97,
+     "exact_wilson": [
+      1.7,
+      9.0
+     ]
+    },
+    "2h_value": {
+     "n": 126,
+     "exact": 6,
+     "exact_pct": 4.76,
+     "exact_wilson": [
+      2.2,
+      10.0
+     ]
+    }
+   },
+   "wall_s": {
+    "mean": 69.536,
+    "median": 65.477
+   },
+   "cpu_s_client": {
+    "mean": 3.149,
+    "median": 3.54
+   },
+   "cpu_s_server": {
+    "mean": 308.777,
+    "median": 286.74
+   },
+   "mcnemar_vs_neuron": {
+    "neuron_only": 2,
+    "rag_only": 89,
+    "p": 3.3822316648042255e-24
+   },
+   "mcnemar_vs_neuron_by_cell": {
+    "1h_company": {
+     "neuron_only": 2,
+     "rag_only": 78,
+     "p": 5.3617847305687254e-21
+    },
+    "2h_company": {
+     "neuron_only": 0,
+     "rag_only": 5,
+     "p": 0.0625
+    },
+    "2h_value": {
+     "neuron_only": 0,
+     "rag_only": 6,
+     "p": 0.03125
+    }
+   }
+  },
+  "neuron": {
+   "rows": 378,
+   "exact": 31,
+   "exact_pct": 8.2,
+   "exact_wilson": [
+    5.8,
+    11.4
+   ],
+   "by_cell": {
+    "1h_company": {
+     "n": 126,
+     "exact": 31,
+     "exact_pct": 24.6,
+     "exact_wilson": [
+      17.9,
+      32.8
+     ]
+    },
+    "2h_company": {
+     "n": 126,
+     "exact": 0,
+     "exact_pct": 0.0,
+     "exact_wilson": [
+      -0.0,
+      3.0
+     ]
+    },
+    "2h_value": {
+     "n": 126,
+     "exact": 0,
+     "exact_pct": 0.0,
+     "exact_wilson": [
+      -0.0,
+      3.0
+     ]
+    }
+   }
+  }
+ },
+ "notice": "Fictional companies (synthetic data generated for this demo). Any resemblance to real companies or people is unintended.",
+ "pass": true
+}

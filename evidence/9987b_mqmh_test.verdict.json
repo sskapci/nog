@@ -1,0 +1,14 @@
+{
+ "tiers": {
+  "2": "FLIES",
+  "3": "FLIES"
+ },
+ "setting": "rel0.1",
+ "pass": {
+  "passed": true,
+  "tiers": {
+   "2": "FLIES",
+   "3": "FLIES"
+  }
+ }
+}

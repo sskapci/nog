@@ -1,0 +1,83 @@
+{
+ "notice": "Fictional companies (synthetic data generated for this demo). Any resemblance to real companies or people is unintended.",
+ "checks": {
+  "K": true,
+  "complete": true,
+  "audit_zero": true,
+  "audit_sees_text": true,
+  "three_eq_one": true,
+  "noise_floor_0": true,
+  "ceiling_oracle_95": true,
+  "known_good_oracle_ge_neuron": true,
+  "set_mode_used": true,
+  "theta1_single": true,
+  "all_arm_superset_size": true,
+  "prev_answered": true,
+  "subsidiary_path_oracle_95": true,
+  "subsidiary_path_neuron_answers": true,
+  "known_bad_badrel_caught": true,
+  "slot_year": true,
+  "slot_names": true,
+  "planner_complete": true,
+  "planner_templates": true,
+  "regression_metaqa": true
+ },
+ "info": {
+  "exact": {
+   "neuron": 43,
+   "all": 23,
+   "first": 12,
+   "oracle": 60
+  },
+  "exact_by_cell": {
+   "neuron": {
+    "1h_value": 9,
+    "2h_value": 3,
+    "1h_company": 9,
+    "1h_year": 12,
+    "2h_company": 10
+   },
+   "all": {
+    "1h_value": 11,
+    "2h_value": 0,
+    "2h_company": 0,
+    "1h_company": 0,
+    "1h_year": 12
+   },
+   "first": {
+    "1h_value": 0,
+    "2h_company": 0,
+    "2h_value": 0,
+    "1h_company": 0,
+    "1h_year": 12
+   },
+   "oracle": {
+    "1h_value": 12,
+    "2h_value": 12,
+    "1h_company": 12,
+    "1h_year": 12,
+    "2h_company": 12
+   }
+  },
+  "ceiling": {
+   "own_doc_questions": 24,
+   "oracle_exact": 24
+  },
+  "subsidiary_product": {
+   "questions": 1,
+   "oracle_exact": 1,
+   "neuron_answered": 1
+  },
+  "badrel": {
+   "prev": 25,
+   "changed": 21,
+   "exact_gold": 12,
+   "exact_bad": 0
+  },
+  "planner_templates": [
+   "chain",
+   "prev"
+  ]
+ },
+ "pass": true
+}

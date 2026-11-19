@@ -1,0 +1,112 @@
+{
+ "pick": "rel0.1",
+ "gates": {
+  "2hop": {
+   "pass": true,
+   "mcnemar": [
+    81,
+    2,
+    7.210946989931019e-22
+   ],
+   "em": {
+    "neuron": {
+     "n": 188,
+     "em": 87,
+     "pct": 46.28,
+     "wilson": [
+      39.3,
+      53.4
+     ]
+    },
+    "first": {
+     "n": 188,
+     "em": 8,
+     "pct": 4.26,
+     "wilson": [
+      2.2,
+      8.2
+     ]
+    },
+    "oracle": {
+     "n": 188,
+     "em": 134,
+     "pct": 71.28,
+     "wilson": [
+      64.4,
+      77.3
+     ]
+    },
+    "onehost": {
+     "n": 188,
+     "em": 87,
+     "pct": 46.28,
+     "wilson": [
+      39.3,
+      53.4
+     ]
+    }
+   },
+   "checks": {
+    "K": true,
+    "audit_zero": true,
+    "audit_sees_text": true,
+    "complete": true,
+    "five_eq_one": true
+   }
+  },
+  "3hop": {
+   "pass": true,
+   "mcnemar": [
+    137,
+    80,
+    0.00013256004258718008
+   ],
+   "em": {
+    "neuron": {
+     "n": 1093,
+     "em": 157,
+     "pct": 14.36,
+     "wilson": [
+      12.4,
+      16.6
+     ]
+    },
+    "first": {
+     "n": 1093,
+     "em": 100,
+     "pct": 9.15,
+     "wilson": [
+      7.6,
+      11.0
+     ]
+    },
+    "oracle": {
+     "n": 1093,
+     "em": 406,
+     "pct": 37.15,
+     "wilson": [
+      34.3,
+      40.1
+     ]
+    },
+    "onehost": {
+     "n": 1093,
+     "em": 157,
+     "pct": 14.36,
+     "wilson": [
+      12.4,
+      16.6
+     ]
+    }
+   },
+   "checks": {
+    "K": true,
+    "audit_zero": true,
+    "audit_sees_text": true,
+    "complete": true,
+    "five_eq_one": true
+   }
+  }
+ },
+ "pass": true
+}

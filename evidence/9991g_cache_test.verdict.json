@@ -1,0 +1,30 @@
+{
+ "rows_A.jsonl": {
+  "n": 10452,
+  "identical": 10452,
+  "same_ids": true
+ },
+ "rows_B.jsonl": {
+  "n": 10452,
+  "identical": 10452,
+  "same_ids": true
+ },
+ "K_full": true,
+ "incomplete_0": true,
+ "audit_0": true,
+ "cost_A": {
+  "kus_owned": 145034127,
+  "batches": 177,
+  "items": 8001,
+  "messages": 1770,
+  "wall_ms": 248292,
+  "kus_evaluated": 385572,
+  "forward_passes": 43411,
+  "cpu_ms": 946010,
+  "thread_total_ms": 305699,
+  "thread_forward_ms": 280090,
+  "thread_lists_ms": 11680,
+  "thread_scan_ms": 13075
+ },
+ "pass": true
+}

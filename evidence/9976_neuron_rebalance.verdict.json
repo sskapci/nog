@@ -1,0 +1,75 @@
+{
+ "checks": {
+  "R1_identical": true,
+  "R2_no_lost": true,
+  "R3_moved": true,
+  "R4_placement": true,
+  "R5_audit": true,
+  "R6_live": true
+ },
+ "info": {
+  "kus": 14177,
+  "moved_join": 2335,
+  "expected_join": 2362.8,
+  "moved_leave": 2335,
+  "spare_held": 2335,
+  "cycles_join": 2,
+  "cycles_leave": 2,
+  "not_here": 0,
+  "forward_moved": 68,
+  "identical_by_cycle": [
+   2000,
+   2000,
+   2000,
+   2000
+  ],
+  "P2": 2000,
+  "P4": 2000,
+  "K": 2000,
+  "audit_join": {
+   "hosts": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "names": [
+    13,
+    11,
+    8,
+    8,
+    8,
+    4
+   ],
+   "driver": 0,
+   "driver_names": 14
+  },
+  "audit_leave": {
+   "hosts": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "names": [
+    14,
+    12,
+    9,
+    8,
+    9,
+    0
+   ],
+   "driver": 0,
+   "driver_names": 14
+  },
+  "rebalance_s": {
+   "join": 23.5,
+   "leave": 19.0
+  }
+ },
+ "pass": true
+}

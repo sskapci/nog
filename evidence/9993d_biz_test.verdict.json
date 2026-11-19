@@ -1,0 +1,16 @@
+{
+ "tiers": {
+  "1h_company": "FLIES",
+  "2h_company": "DOES NOT FLY",
+  "2h_value": "DOES NOT FLY"
+ },
+ "theta_f": 0.7,
+ "pass": {
+  "passed": true,
+  "tiers": {
+   "1h_company": "FLIES",
+   "2h_company": "DOES NOT FLY",
+   "2h_value": "DOES NOT FLY"
+  }
+ }
+}

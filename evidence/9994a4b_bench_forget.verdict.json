@@ -1,0 +1,76 @@
+{
+ "notice": "Fictional companies (synthetic data generated for this demo). Any resemblance to real companies or people is unintended.",
+ "arm": "gold plans",
+ "stages": {
+  "30": {
+   "forgotten": 30,
+   "forget_questions": 197,
+   "leaks": 0,
+   "leak_rate_wilson": [
+    0.0,
+    1.9
+   ],
+   "leak_ids": [],
+   "still_sourced_answers": 164,
+   "answered_before": 191,
+   "answered_after": 164,
+   "retain_questions": 12739,
+   "retain_identical": 12739,
+   "retain_identical_pct": 100.0,
+   "retain_touched_by_forgotten": 2,
+   "touched_changed": 2,
+   "touched_lost_gold_answer": 0,
+   "audit_total": 0,
+   "forget_s": 0.951,
+   "audit_clean_s": 2.68,
+   "pass": true
+  },
+  "150": {
+   "forgotten": 150,
+   "forget_questions": 933,
+   "leaks": 0,
+   "leak_rate_wilson": [
+    0.0,
+    0.4
+   ],
+   "leak_ids": [],
+   "still_sourced_answers": 773,
+   "answered_before": 903,
+   "answered_after": 773,
+   "retain_questions": 11991,
+   "retain_identical": 11991,
+   "retain_identical_pct": 100.0,
+   "retain_touched_by_forgotten": 14,
+   "touched_changed": 14,
+   "touched_lost_gold_answer": 0,
+   "audit_total": 0,
+   "forget_s": 1.631,
+   "audit_clean_s": 3.711,
+   "pass": true
+  },
+  "300": {
+   "forgotten": 300,
+   "forget_questions": 1843,
+   "leaks": 0,
+   "leak_rate_wilson": [
+    0.0,
+    0.2
+   ],
+   "leak_ids": [],
+   "still_sourced_answers": 1514,
+   "answered_before": 1781,
+   "answered_after": 1514,
+   "retain_questions": 11063,
+   "retain_identical": 11063,
+   "retain_identical_pct": 100.0,
+   "retain_touched_by_forgotten": 32,
+   "touched_changed": 31,
+   "touched_lost_gold_answer": 0,
+   "audit_total": 0,
+   "forget_s": 1.692,
+   "audit_clean_s": 3.634,
+   "pass": true
+  }
+ },
+ "pass": true
+}

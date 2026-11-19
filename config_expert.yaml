@@ -1,0 +1,87 @@
+# Micro-unit network prototype configuration.
+# Every tunable lives here. CLI flags only pick the config file and artifact dir.
+
+seed: 42
+artifacts_dir: artifacts/net200       # where `build` writes and other commands read
+
+data:
+  dataset: wikimedia/wikipedia
+  dataset_config: 20231101.simple
+  n_articles: 200                     # default small; 2000 / 20000 for scale runs
+  min_sentences: 5                    # skip stubs with fewer usable sentences
+  max_chunks_per_article: 40          # keep the lead of long articles only
+  min_sentence_chars: 25
+  max_sentence_chars: 400
+
+embedding:                            # language expert (input side) = shared concept space
+  model: ours/enc16k-s2030          # our step 2 encoder (2026-10-24b); built by experiments/expert/rebuild_kus.py
+  query_prefix: ""
+  passage_prefix: ""
+  batch_size: 256
+  device: cpu
+
+unit:
+  type: sentence                      # pluggable; see mxn/units/registry.py
+  findings_per_unit: 2              # top sentences returned as evidence
+  fact_extractor: none                # none | copula
+
+graph:
+  k: 8                                # near links per unit (by centroid similarity)
+  long_range: 2                       # random long-range links per unit
+  select: diverse                     # knn | diverse (HNSW heuristic: links point in different directions;
+                                      #   20k: source reached 94.0 vs 90.5%, McNemar p = 0.001)
+  select_pool: 4                      # diverse: candidates considered = select_pool * k
+  long_mode: uniform                  # uniform | rank (Kleinberg-style: P(similarity rank r) ~ 1/r)
+  degree_slack: 2                     # near links may grow to k + slack before pruning
+  n_hubs: 8                           # highest in-degree units used as hub entry points
+  build_block: 2048                   # rows per block for the one-time brute-force build
+
+routing:                              # units forward messages; the gateway only injects them
+  entry: hubs                         # hubs | random
+  beam: 1                             # walkers (query messages) per request
+  frontier_cap: 64                    # backtrack candidates carried inside each message
+  threshold: 0.8                      # confidence needed to record findings
+  stop_confidence: 0.95               # the request stops only at a finding this confident
+  max_hops: 5000                      # message TTL; null = unlimited (walk until stop or nothing new)
+  patience: null                      # a request part with an answer stops steering after this many
+                                      #   hops without a better one; null = never
+  unit_split: false                   # units split off parts their answer does not cover (experimental)
+  max_parts: 6                        # parts per request (language split + unit-added)
+  bridge_alpha: 1.0                   # weight of the answer vector when a unit aims a bridge part
+
+calibration:                          # calibrated confidence ("how likely do I hold the answer?")
+  weights_from: null                  # O1 refit on our vectors (rebuild_kus.py)
+                                      #   intercept on rule questions (O1). null = raw cosine
+  doc2query: null                     # optional: path to doc2query texts.json (gen_d2q.py); at 20k
+                                      #   it fills more but breaks the 2% false-fill limit (O2)
+
+local_learning:
+  insert_beam: 8                      # neighbor search for a new unit may take
+  insert_max_hops: 30                 #   insert_beam * insert_max_hops forwards
+  random_walk_len: 10                 # long-range links come from local random walks
+  reconnect_min_sim: 0.3              # removal: reconnect orphaned neighbors above this similarity
+
+resultant:
+  type: rules
+  accept_confidence: 0.65             # below this, ask for a follow-up search
+  agree_sim: 0.6                      # two findings agree if their evidence is this similar
+  divergence_sim: 0.35                # confident findings this dissimilar = possible conflict
+  divergence_conf_gap: 0.05           # ...and only when their confidences are this close
+  duplicate_sim: 0.95                 # near-identical evidence is merged
+  max_followups: 1
+  refine_alpha: 0.5                   # follow-up query = q + alpha * mean(top findings)
+  max_facts: 3
+
+output:
+  mode: template                      # template | llm (llm only rephrases, never adds facts)
+  llm_model: Qwen/Qwen2.5-0.5B-Instruct
+
+evaluation:
+  n_single_questions: 200             # at most one per article
+  n_multi_questions: 50
+  question_generator: template        # template | llm
+  thresholds: [0.4, 0.5, 0.6, 0.7, 0.8]
+  beams: [1, 2, 3, 4, 5]
+  insert_fraction: 0.1
+  baseline_top_k: 3
+  report_path: reports/evaluation.md

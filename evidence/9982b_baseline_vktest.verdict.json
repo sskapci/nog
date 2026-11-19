@@ -1,0 +1,9 @@
+{
+ "checks": {
+  "rows_2000": true,
+  "audit_clean": true,
+  "scored": true
+ },
+ "pass": true,
+ "label": "baseline (not neurons)"
+}

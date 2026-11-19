@@ -1,0 +1,40 @@
+{
+ "notice": "Fictional companies (synthetic data generated for this demo). Any resemblance to real companies or people is unintended.",
+ "checks": {
+  "noise_floor_before": true,
+  "noise_floor_after": true,
+  "forget_known_good": true,
+  "known_bad_cold_caught": true,
+  "known_bad_scrub_caught": true,
+  "edit_known_good": true,
+  "edit_known_bad_caught": true
+ },
+ "info": {
+  "forget_good": {
+   "leaks": 0,
+   "retain_identical_pct": 100.0,
+   "audit_total": 0,
+   "forget_questions": 64,
+   "answered_before": 64,
+   "answered_after": 63,
+   "still_sourced_answers": 63
+  },
+  "keepcold_audit_cold": 30,
+  "noscrub_audit_pointers": 20,
+  "edit_good_probe_new_pct": 89.5,
+  "edit_good_probe_n": 19,
+  "edit_good_known_fact_new_pct": 100.0,
+  "edit_good_known_fact_n": 17,
+  "edit_notrain_probe_new_pct": 0.0,
+  "edit_good": {
+   "retrained": 20,
+   "n": 20,
+   "neighbour_identical_pct": 100.0,
+   "to_answer_s": {
+    "mean": 1.067,
+    "median": 1.06
+   }
+  }
+ },
+ "pass": true
+}

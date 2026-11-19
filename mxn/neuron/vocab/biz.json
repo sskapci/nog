@@ -1,0 +1,36 @@
+{
+ "note": "Demo corpus relation vocabulary: fictional companies (synthetic data generated for this demo; any resemblance to real companies or people is unintended). reports/design_demo_corpus.md, owner decision D3 (option A), 2026-11-09. cues: words the document templates use for each relation (experiments/dataset/demo_gen.py); nouns / ask: query wordings (ask[r][-1] is the held-out wording, test only); kind: expected value kind; gaps: relations expected to lack cue words.",
+ "relations": ["founded_by", "ceo", "headquartered_in", "product", "industry", "parent", "subsidiary", "founded_year"],
+ "cues": {
+  "founded_by": ["founded", "founder", "founders", "co-founded", "established", "started"],
+  "ceo": ["ceo", "chief executive", "led by", "runs", "heads"],
+  "headquartered_in": ["headquartered", "headquarters", "based in", "head office"],
+  "product": ["product", "products", "makes", "sells", "line", "offers"],
+  "industry": ["industry", "sector", "operates in", "active in"],
+  "parent": ["parent", "subsidiary of", "owned by", "part of"],
+  "subsidiary": ["subsidiary", "subsidiaries", "owns", "acquired"],
+  "founded_year": ["founded in", "established in", "since"]
+ },
+ "nouns": {
+  "founded_by": ["founder"],
+  "ceo": ["ceo", "chief executive"],
+  "headquartered_in": ["headquarters", "home city"],
+  "product": ["product"],
+  "industry": ["industry", "sector"],
+  "parent": ["parent company", "owner"],
+  "subsidiary": ["subsidiary"],
+  "founded_year": ["founding year"]
+ },
+ "ask": {
+  "founded_by": ["Who founded {D}?", "Who are the founders of {D}?", "Who started {D}?"],
+  "ceo": ["Who is the CEO of {D}?", "Who runs {D}?", "Who is the chief executive of {D}?"],
+  "headquartered_in": ["Where is {D} headquartered?", "Where is {D} based?", "In which city is the head office of {D}?"],
+  "product": ["What products does {D} make?", "What does {D} sell?", "Which products does {D} offer?"],
+  "industry": ["What industry is {D} in?", "Which sector is {D} active in?", "What business is {D} in?"],
+  "parent": ["What is the parent company of {D}?", "Who owns {D}?", "Which company is {D} part of?"],
+  "subsidiary": ["What are the subsidiaries of {D}?", "Which companies does {D} own?", "Which companies belong to {D}?"],
+  "founded_year": ["When was {D} founded?", "In what year was {D} established?", "Since when has {D} existed?"]
+ },
+ "kind": {"founded_year": "date"},
+ "gaps": ["industry", "founded_year"]
+}

@@ -1,0 +1,28 @@
+[project]
+name = "mxn"
+version = "0.1.0"
+description = "Knowledge in share-nothing knowledge units, logic in our own small expert (prototype)"
+requires-python = ">=3.11"
+dependencies = [
+    "numpy",
+    "scipy",
+    "pyyaml",
+    "torch",
+    "sentencepiece",
+    "datasets",
+]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+# RAG baseline (baseline, not neurons): versions used in the runs 9994*
+rag = ["faiss-cpu==1.9.0", "sentence-transformers==6.1.0"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["mxn*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

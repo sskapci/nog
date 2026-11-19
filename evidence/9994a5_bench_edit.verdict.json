@@ -1,0 +1,128 @@
+{
+ "notice": "Fictional companies (synthetic data generated for this demo). Any resemblance to real companies or people is unintended.",
+ "arm": "gold plans",
+ "classes": {
+  "efficacy": {
+   "after_vs_new_gold": {
+    "n": 422,
+    "exact": 308,
+    "pct": 72.99,
+    "wilson": [
+     68.6,
+     77.0
+    ]
+   },
+   "before_vs_old_gold": {
+    "n": 422,
+    "exact": 309,
+    "pct": 73.22,
+    "wilson": [
+     68.8,
+     77.2
+    ]
+   }
+  },
+  "efficacy_founded_year": {
+   "after_vs_new_gold": {
+    "n": 78,
+    "exact": 78,
+    "pct": 100.0,
+    "wilson": [
+     95.3,
+     100.0
+    ]
+   }
+  },
+  "generalization": {
+   "after_vs_new_gold": {
+    "n": 1000,
+    "exact": 772,
+    "pct": 77.2,
+    "wilson": [
+     74.5,
+     79.7
+    ]
+   },
+   "before_vs_old_gold": {
+    "n": 1000,
+    "exact": 774,
+    "pct": 77.4,
+    "wilson": [
+     74.7,
+     79.9
+    ]
+   }
+  },
+  "multihop": {
+   "after_vs_new_gold": {
+    "n": 454,
+    "exact": 211,
+    "pct": 46.48,
+    "wilson": [
+     41.9,
+     51.1
+    ]
+   },
+   "before_vs_old_gold": {
+    "n": 454,
+    "exact": 200,
+    "pct": 44.05,
+    "wilson": [
+     39.6,
+     48.7
+    ]
+   }
+  },
+  "specificity_own": {
+   "after_vs_new_gold": {
+    "n": 1040,
+    "exact": 836,
+    "pct": 80.38,
+    "wilson": [
+     77.9,
+     82.7
+    ]
+   },
+   "before_vs_old_gold": {
+    "n": 1040,
+    "exact": 847,
+    "pct": 81.44,
+    "wilson": [
+     79.0,
+     83.7
+    ]
+   }
+  },
+  "efficacy_known_fact": {
+   "n": 351,
+   "new_listed_old_gone": 348,
+   "pct": 99.15,
+   "wilson": [
+    97.5,
+    99.7
+   ]
+  },
+  "specificity_neighbour": {
+   "n": 1970,
+   "identical": 1970,
+   "identical_pct": 100.0
+  },
+  "other": {
+   "n": 9284,
+   "identical": 8961
+  }
+ },
+ "edits": {
+  "n": 500,
+  "retrained": 500,
+  "edit_s": {
+   "mean": 0.987,
+   "median": 0.969
+  },
+  "to_answer_s": {
+   "mean": 1.059,
+   "median": 1.042
+  }
+ },
+ "pass": true
+}

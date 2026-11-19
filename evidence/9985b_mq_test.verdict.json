@@ -1,0 +1,1012 @@
+{
+ "n": 2000,
+ "labels": {
+  "neuron": "neurons (system)",
+  "first": "control: first fitting slot, same pipeline",
+  "oracle": "oracle neurons (gold labels): ceiling, measurement only",
+  "baseline": "baseline (not neurons), frozen chapter 2",
+  "onehost": "neurons, 1 host"
+ },
+ "em": {
+  "neuron": {
+   "n": 2000,
+   "em": 1108,
+   "pct": 55.4,
+   "wilson": [
+    53.2,
+    57.6
+   ]
+  },
+  "first": {
+   "n": 2000,
+   "em": 805,
+   "pct": 40.25,
+   "wilson": [
+    38.1,
+    42.4
+   ]
+  },
+  "onehost": {
+   "n": 2000,
+   "em": 1108,
+   "pct": 55.4,
+   "wilson": [
+    53.2,
+    57.6
+   ]
+  }
+ },
+ "confident_wrong": {
+  "neuron": 0,
+  "first": 0,
+  "onehost": 0
+ },
+ "confident": {
+  "neuron": 0,
+  "first": 0,
+  "onehost": 0
+ },
+ "abstention_pct": {
+  "neuron": 0.0,
+  "first": 0.0,
+  "onehost": 0.0
+ },
+ "by_type": {
+  "directed_by": {
+   "neuron": {
+    "n": 502,
+    "em": 443,
+    "pct": 88.25,
+    "wilson": [
+     85.1,
+     90.8
+    ]
+   },
+   "first": {
+    "n": 502,
+    "em": 110,
+    "pct": 21.91,
+    "wilson": [
+     18.5,
+     25.7
+    ]
+   },
+   "onehost": {
+    "n": 502,
+    "em": 443,
+    "pct": 88.25,
+    "wilson": [
+     85.1,
+     90.8
+    ]
+   }
+  },
+  "has_genre": {
+   "neuron": {
+    "n": 336,
+    "em": 0,
+    "pct": 0.0,
+    "wilson": [
+     0.0,
+     1.1
+    ]
+   },
+   "first": {
+    "n": 336,
+    "em": 0,
+    "pct": 0.0,
+    "wilson": [
+     0.0,
+     1.1
+    ]
+   },
+   "onehost": {
+    "n": 336,
+    "em": 0,
+    "pct": 0.0,
+    "wilson": [
+     0.0,
+     1.1
+    ]
+   }
+  },
+  "has_tags": {
+   "neuron": {
+    "n": 128,
+    "em": 13,
+    "pct": 10.16,
+    "wilson": [
+     6.0,
+     16.6
+    ]
+   },
+   "first": {
+    "n": 128,
+    "em": 14,
+    "pct": 10.94,
+    "wilson": [
+     6.6,
+     17.5
+    ]
+   },
+   "onehost": {
+    "n": 128,
+    "em": 13,
+    "pct": 10.16,
+    "wilson": [
+     6.0,
+     16.6
+    ]
+   }
+  },
+  "in_language": {
+   "neuron": {
+    "n": 100,
+    "em": 23,
+    "pct": 23.0,
+    "wilson": [
+     15.8,
+     32.2
+    ]
+   },
+   "first": {
+    "n": 100,
+    "em": 59,
+    "pct": 59.0,
+    "wilson": [
+     49.2,
+     68.1
+    ]
+   },
+   "onehost": {
+    "n": 100,
+    "em": 23,
+    "pct": 23.0,
+    "wilson": [
+     15.8,
+     32.2
+    ]
+   }
+  },
+  "release_year": {
+   "neuron": {
+    "n": 582,
+    "em": 441,
+    "pct": 75.77,
+    "wilson": [
+     72.1,
+     79.1
+    ]
+   },
+   "first": {
+    "n": 582,
+    "em": 556,
+    "pct": 95.53,
+    "wilson": [
+     93.5,
+     96.9
+    ]
+   },
+   "onehost": {
+    "n": 582,
+    "em": 441,
+    "pct": 75.77,
+    "wilson": [
+     72.1,
+     79.1
+    ]
+   }
+  },
+  "starred_actors": {
+   "neuron": {
+    "n": 91,
+    "em": 40,
+    "pct": 43.96,
+    "wilson": [
+     34.2,
+     54.2
+    ]
+   },
+   "first": {
+    "n": 91,
+    "em": 14,
+    "pct": 15.38,
+    "wilson": [
+     9.4,
+     24.2
+    ]
+   },
+   "onehost": {
+    "n": 91,
+    "em": 40,
+    "pct": 43.96,
+    "wilson": [
+     34.2,
+     54.2
+    ]
+   }
+  },
+  "written_by": {
+   "neuron": {
+    "n": 261,
+    "em": 148,
+    "pct": 56.7,
+    "wilson": [
+     50.6,
+     62.6
+    ]
+   },
+   "first": {
+    "n": 261,
+    "em": 52,
+    "pct": 19.92,
+    "wilson": [
+     15.5,
+     25.2
+    ]
+   },
+   "onehost": {
+    "n": 261,
+    "em": 148,
+    "pct": 56.7,
+    "wilson": [
+     50.6,
+     62.6
+    ]
+   }
+  }
+ },
+ "by_group": {
+  "cue": {
+   "neuron": {
+    "n": 854,
+    "em": 631,
+    "pct": 73.89,
+    "wilson": [
+     70.8,
+     76.7
+    ]
+   },
+   "first": {
+    "n": 854,
+    "em": 176,
+    "pct": 20.61,
+    "wilson": [
+     18.0,
+     23.5
+    ]
+   },
+   "onehost": {
+    "n": 854,
+    "em": 631,
+    "pct": 73.89,
+    "wilson": [
+     70.8,
+     76.7
+    ]
+   }
+  },
+  "gap": {
+   "neuron": {
+    "n": 1146,
+    "em": 477,
+    "pct": 41.62,
+    "wilson": [
+     38.8,
+     44.5
+    ]
+   },
+   "first": {
+    "n": 1146,
+    "em": 629,
+    "pct": 54.89,
+    "wilson": [
+     52.0,
+     57.7
+    ]
+   },
+   "onehost": {
+    "n": 1146,
+    "em": 477,
+    "pct": 41.62,
+    "wilson": [
+     38.8,
+     44.5
+    ]
+   }
+  }
+ },
+ "cue_by_type": {
+  "directed_by": {
+   "neuron": {
+    "n": 502,
+    "em": 443,
+    "pct": 88.25,
+    "wilson": [
+     85.1,
+     90.8
+    ]
+   },
+   "first": {
+    "n": 502,
+    "em": 110,
+    "pct": 21.91,
+    "wilson": [
+     18.5,
+     25.7
+    ]
+   },
+   "onehost": {
+    "n": 502,
+    "em": 443,
+    "pct": 88.25,
+    "wilson": [
+     85.1,
+     90.8
+    ]
+   }
+  },
+  "has_genre": {
+   "neuron": {
+    "n": 0,
+    "em": 0,
+    "pct": null,
+    "wilson": null
+   },
+   "first": {
+    "n": 0,
+    "em": 0,
+    "pct": null,
+    "wilson": null
+   },
+   "onehost": {
+    "n": 0,
+    "em": 0,
+    "pct": null,
+    "wilson": null
+   }
+  },
+  "has_tags": {
+   "neuron": {
+    "n": 0,
+    "em": 0,
+    "pct": null,
+    "wilson": null
+   },
+   "first": {
+    "n": 0,
+    "em": 0,
+    "pct": null,
+    "wilson": null
+   },
+   "onehost": {
+    "n": 0,
+    "em": 0,
+    "pct": null,
+    "wilson": null
+   }
+  },
+  "in_language": {
+   "neuron": {
+    "n": 0,
+    "em": 0,
+    "pct": null,
+    "wilson": null
+   },
+   "first": {
+    "n": 0,
+    "em": 0,
+    "pct": null,
+    "wilson": null
+   },
+   "onehost": {
+    "n": 0,
+    "em": 0,
+    "pct": null,
+    "wilson": null
+   }
+  },
+  "release_year": {
+   "neuron": {
+    "n": 0,
+    "em": 0,
+    "pct": null,
+    "wilson": null
+   },
+   "first": {
+    "n": 0,
+    "em": 0,
+    "pct": null,
+    "wilson": null
+   },
+   "onehost": {
+    "n": 0,
+    "em": 0,
+    "pct": null,
+    "wilson": null
+   }
+  },
+  "starred_actors": {
+   "neuron": {
+    "n": 91,
+    "em": 40,
+    "pct": 43.96,
+    "wilson": [
+     34.2,
+     54.2
+    ]
+   },
+   "first": {
+    "n": 91,
+    "em": 14,
+    "pct": 15.38,
+    "wilson": [
+     9.4,
+     24.2
+    ]
+   },
+   "onehost": {
+    "n": 91,
+    "em": 40,
+    "pct": 43.96,
+    "wilson": [
+     34.2,
+     54.2
+    ]
+   }
+  },
+  "written_by": {
+   "neuron": {
+    "n": 261,
+    "em": 148,
+    "pct": 56.7,
+    "wilson": [
+     50.6,
+     62.6
+    ]
+   },
+   "first": {
+    "n": 261,
+    "em": 52,
+    "pct": 19.92,
+    "wilson": [
+     15.5,
+     25.2
+    ]
+   },
+   "onehost": {
+    "n": 261,
+    "em": 148,
+    "pct": 56.7,
+    "wilson": [
+     50.6,
+     62.6
+    ]
+   }
+  }
+ },
+ "by_relation": {
+  "release_year": {
+   "gap": true,
+   "neuron": {
+    "n": 582,
+    "em": 441,
+    "pct": 75.77,
+    "wilson": [
+     72.1,
+     79.1
+    ]
+   },
+   "first": {
+    "n": 582,
+    "em": 556,
+    "pct": 95.53,
+    "wilson": [
+     93.5,
+     96.9
+    ]
+   },
+   "onehost": {
+    "n": 582,
+    "em": 441,
+    "pct": 75.77,
+    "wilson": [
+     72.1,
+     79.1
+    ]
+   }
+  },
+  "directed_by": {
+   "gap": false,
+   "neuron": {
+    "n": 502,
+    "em": 443,
+    "pct": 88.25,
+    "wilson": [
+     85.1,
+     90.8
+    ]
+   },
+   "first": {
+    "n": 502,
+    "em": 110,
+    "pct": 21.91,
+    "wilson": [
+     18.5,
+     25.7
+    ]
+   },
+   "onehost": {
+    "n": 502,
+    "em": 443,
+    "pct": 88.25,
+    "wilson": [
+     85.1,
+     90.8
+    ]
+   }
+  },
+  "has_genre": {
+   "gap": true,
+   "neuron": {
+    "n": 336,
+    "em": 0,
+    "pct": 0.0,
+    "wilson": [
+     0.0,
+     1.1
+    ]
+   },
+   "first": {
+    "n": 336,
+    "em": 0,
+    "pct": 0.0,
+    "wilson": [
+     0.0,
+     1.1
+    ]
+   },
+   "onehost": {
+    "n": 336,
+    "em": 0,
+    "pct": 0.0,
+    "wilson": [
+     0.0,
+     1.1
+    ]
+   }
+  },
+  "written_by": {
+   "gap": false,
+   "neuron": {
+    "n": 261,
+    "em": 148,
+    "pct": 56.7,
+    "wilson": [
+     50.6,
+     62.6
+    ]
+   },
+   "first": {
+    "n": 261,
+    "em": 52,
+    "pct": 19.92,
+    "wilson": [
+     15.5,
+     25.2
+    ]
+   },
+   "onehost": {
+    "n": 261,
+    "em": 148,
+    "pct": 56.7,
+    "wilson": [
+     50.6,
+     62.6
+    ]
+   }
+  },
+  "has_tags": {
+   "gap": true,
+   "neuron": {
+    "n": 128,
+    "em": 13,
+    "pct": 10.16,
+    "wilson": [
+     6.0,
+     16.6
+    ]
+   },
+   "first": {
+    "n": 128,
+    "em": 14,
+    "pct": 10.94,
+    "wilson": [
+     6.6,
+     17.5
+    ]
+   },
+   "onehost": {
+    "n": 128,
+    "em": 13,
+    "pct": 10.16,
+    "wilson": [
+     6.0,
+     16.6
+    ]
+   }
+  },
+  "in_language": {
+   "gap": true,
+   "neuron": {
+    "n": 100,
+    "em": 23,
+    "pct": 23.0,
+    "wilson": [
+     15.8,
+     32.2
+    ]
+   },
+   "first": {
+    "n": 100,
+    "em": 59,
+    "pct": 59.0,
+    "wilson": [
+     49.2,
+     68.1
+    ]
+   },
+   "onehost": {
+    "n": 100,
+    "em": 23,
+    "pct": 23.0,
+    "wilson": [
+     15.8,
+     32.2
+    ]
+   }
+  },
+  "starred_actors": {
+   "gap": false,
+   "neuron": {
+    "n": 91,
+    "em": 40,
+    "pct": 43.96,
+    "wilson": [
+     34.2,
+     54.2
+    ]
+   },
+   "first": {
+    "n": 91,
+    "em": 14,
+    "pct": 15.38,
+    "wilson": [
+     9.4,
+     24.2
+    ]
+   },
+   "onehost": {
+    "n": 91,
+    "em": 40,
+    "pct": 43.96,
+    "wilson": [
+     34.2,
+     54.2
+    ]
+   }
+  }
+ },
+ "mcnemar_neuron_vs_first": [
+  505,
+  202,
+  8.133940693691426e-31
+ ],
+ "mcnemar_by_type": {
+  "directed_by": [
+   343,
+   10,
+   8.172051464441039e-88
+  ],
+  "has_genre": [
+   0,
+   0,
+   1.0
+  ],
+  "has_tags": [
+   8,
+   9,
+   1.0
+  ],
+  "in_language": [
+   8,
+   44,
+   4.0393217393130953e-07
+  ],
+  "release_year": [
+   3,
+   118,
+   2.222056719664464e-31
+  ],
+  "starred_actors": [
+   28,
+   2,
+   8.67992639541626e-07
+  ],
+  "written_by": [
+   115,
+   19,
+   6.1372914856593e-18
+  ]
+ },
+ "hop2": {
+  "neuron": {
+   "directed_by": {
+    "chains_needing_hop2": 502,
+    "reached_hop2": 0,
+    "dont_know_at_hop2": 0,
+    "dont_know_rate_pct": null,
+    "f_below_0.5_at_hop2": 0
+   },
+   "has_genre": {
+    "chains_needing_hop2": 336,
+    "reached_hop2": 0,
+    "dont_know_at_hop2": 0,
+    "dont_know_rate_pct": null,
+    "f_below_0.5_at_hop2": 0
+   },
+   "has_tags": {
+    "chains_needing_hop2": 128,
+    "reached_hop2": 0,
+    "dont_know_at_hop2": 0,
+    "dont_know_rate_pct": null,
+    "f_below_0.5_at_hop2": 0
+   },
+   "in_language": {
+    "chains_needing_hop2": 100,
+    "reached_hop2": 0,
+    "dont_know_at_hop2": 0,
+    "dont_know_rate_pct": null,
+    "f_below_0.5_at_hop2": 0
+   },
+   "release_year": {
+    "chains_needing_hop2": 582,
+    "reached_hop2": 0,
+    "dont_know_at_hop2": 0,
+    "dont_know_rate_pct": null,
+    "f_below_0.5_at_hop2": 0
+   },
+   "starred_actors": {
+    "chains_needing_hop2": 91,
+    "reached_hop2": 0,
+    "dont_know_at_hop2": 0,
+    "dont_know_rate_pct": null,
+    "f_below_0.5_at_hop2": 0
+   },
+   "written_by": {
+    "chains_needing_hop2": 261,
+    "reached_hop2": 0,
+    "dont_know_at_hop2": 0,
+    "dont_know_rate_pct": null,
+    "f_below_0.5_at_hop2": 0
+   }
+  },
+  "first": {
+   "directed_by": {
+    "chains_needing_hop2": 502,
+    "reached_hop2": 0,
+    "dont_know_at_hop2": 0,
+    "dont_know_rate_pct": null,
+    "f_below_0.5_at_hop2": 0
+   },
+   "has_genre": {
+    "chains_needing_hop2": 336,
+    "reached_hop2": 0,
+    "dont_know_at_hop2": 0,
+    "dont_know_rate_pct": null,
+    "f_below_0.5_at_hop2": 0
+   },
+   "has_tags": {
+    "chains_needing_hop2": 128,
+    "reached_hop2": 0,
+    "dont_know_at_hop2": 0,
+    "dont_know_rate_pct": null,
+    "f_below_0.5_at_hop2": 0
+   },
+   "in_language": {
+    "chains_needing_hop2": 100,
+    "reached_hop2": 0,
+    "dont_know_at_hop2": 0,
+    "dont_know_rate_pct": null,
+    "f_below_0.5_at_hop2": 0
+   },
+   "release_year": {
+    "chains_needing_hop2": 582,
+    "reached_hop2": 0,
+    "dont_know_at_hop2": 0,
+    "dont_know_rate_pct": null,
+    "f_below_0.5_at_hop2": 0
+   },
+   "starred_actors": {
+    "chains_needing_hop2": 91,
+    "reached_hop2": 0,
+    "dont_know_at_hop2": 0,
+    "dont_know_rate_pct": null,
+    "f_below_0.5_at_hop2": 0
+   },
+   "written_by": {
+    "chains_needing_hop2": 261,
+    "reached_hop2": 0,
+    "dont_know_at_hop2": 0,
+    "dont_know_rate_pct": null,
+    "f_below_0.5_at_hop2": 0
+   }
+  },
+  "onehost": {
+   "directed_by": {
+    "chains_needing_hop2": 502,
+    "reached_hop2": 0,
+    "dont_know_at_hop2": 0,
+    "dont_know_rate_pct": null,
+    "f_below_0.5_at_hop2": 0
+   },
+   "has_genre": {
+    "chains_needing_hop2": 336,
+    "reached_hop2": 0,
+    "dont_know_at_hop2": 0,
+    "dont_know_rate_pct": null,
+    "f_below_0.5_at_hop2": 0
+   },
+   "has_tags": {
+    "chains_needing_hop2": 128,
+    "reached_hop2": 0,
+    "dont_know_at_hop2": 0,
+    "dont_know_rate_pct": null,
+    "f_below_0.5_at_hop2": 0
+   },
+   "in_language": {
+    "chains_needing_hop2": 100,
+    "reached_hop2": 0,
+    "dont_know_at_hop2": 0,
+    "dont_know_rate_pct": null,
+    "f_below_0.5_at_hop2": 0
+   },
+   "release_year": {
+    "chains_needing_hop2": 582,
+    "reached_hop2": 0,
+    "dont_know_at_hop2": 0,
+    "dont_know_rate_pct": null,
+    "f_below_0.5_at_hop2": 0
+   },
+   "starred_actors": {
+    "chains_needing_hop2": 91,
+    "reached_hop2": 0,
+    "dont_know_at_hop2": 0,
+    "dont_know_rate_pct": null,
+    "f_below_0.5_at_hop2": 0
+   },
+   "written_by": {
+    "chains_needing_hop2": 261,
+    "reached_hop2": 0,
+    "dont_know_at_hop2": 0,
+    "dont_know_rate_pct": null,
+    "f_below_0.5_at_hop2": 0
+   }
+  }
+ },
+ "K_identical": [
+  2000,
+  2000
+ ],
+ "audit_after": [
+  0,
+  0,
+  0,
+  0,
+  0,
+  0
+ ],
+ "audit_before_drop": [
+  15691,
+  15458,
+  16085,
+  15559,
+  16226
+ ],
+ "incomplete": {
+  "A": 0,
+  "B": 0
+ },
+ "routing": {
+  "hop_pointer": 0,
+  "hop_broadcast": 0,
+  "hop_literal_end": 0,
+  "dont_know": 0,
+  "forward_same_host": 0,
+  "forward_other_host": 0,
+  "tasks_in": 4000,
+  "batches_in": 80,
+  "not_here": 0
+ },
+ "cost": {
+  "train_wall_s": 3947.6,
+  "wire_wall_s": 15.4,
+  "pass_B_wall_s": 25.4,
+  "train": [
+   {
+    "n": 3598,
+    "resumed": 0,
+    "cpu_s_per_ku": 0.9162,
+    "params_mean": 35908.53279599777
+   },
+   {
+    "n": 3554,
+    "resumed": 0,
+    "cpu_s_per_ku": 0.9149,
+    "params_mean": 35884.997749015194
+   },
+   {
+    "n": 3700,
+    "resumed": 0,
+    "cpu_s_per_ku": 0.921,
+    "params_mean": 35893.362432432434
+   },
+   {
+    "n": 3578,
+    "resumed": 0,
+    "cpu_s_per_ku": 0.9216,
+    "params_mean": 35892.72163219676
+   },
+   {
+    "n": 3697,
+    "resumed": 0,
+    "cpu_s_per_ku": 0.9176,
+    "params_mean": 35900.54747092237
+   }
+  ],
+  "wire": [
+   {
+    "n_slots": 41478,
+    "pointers": 1562
+   },
+   {
+    "n_slots": 40441,
+    "pointers": 1553
+   },
+   {
+    "n_slots": 42343,
+    "pointers": 1649
+   },
+   {
+    "n_slots": 40850,
+    "pointers": 1563
+   },
+   {
+    "n_slots": 42500,
+    "pointers": 1646
+   }
+  ]
+ },
+ "checks": {
+  "K": true,
+  "audit_zero": true,
+  "audit_sees_text": true,
+  "complete": true,
+  "five_eq_one": true
+ },
+ "bars": {
+  "directed_by": 49,
+  "starred_actors": 48,
+  "written_by": 48
+ },
+ "bar_ok": {
+  "directed_by": true,
+  "starred_actors": false,
+  "written_by": true
+ },
+ "tier": "PARTLY",
+ "pass": {
+  "passed": false,
+  "tier": "PARTLY"
+ }
+}

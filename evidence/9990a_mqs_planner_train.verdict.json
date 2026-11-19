@@ -1,0 +1,8 @@
+{
+ "pass": true,
+ "best": [
+  "1944",
+  "99.23"
+ ],
+ "rule": "hold-out exact >= 90%"
+}

@@ -1,0 +1,130 @@
+{
+ "checks": {
+  "R1": true,
+  "R2": true,
+  "R3": true,
+  "R4": true,
+  "R5": true,
+  "R6": true
+ },
+ "info": {
+  "kus": 14177,
+  "questions": 2000,
+  "death_1": {
+   "victim": "h2",
+   "victim_kus": 2929,
+   "restored": 2929,
+   "retried": 250,
+   "identical": 2000,
+   "incomplete": 0,
+   "P_identical": 2000,
+   "confirm_s": 1.6,
+   "takeover_s": 5.4,
+   "copies_after": 14177
+  },
+  "death_2": {
+   "victim": "h4",
+   "victim_kus": 3620,
+   "restored": 3620,
+   "retried": 250,
+   "identical": 2000,
+   "incomplete": 0,
+   "P_identical": 2000,
+   "confirm_s": 1.5,
+   "takeover_s": 8.0,
+   "copies_after": 14177
+  },
+  "audits": [
+   {
+    "hosts": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "driver": 0,
+    "cold_text": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "cold_names": [
+     13,
+     10,
+     7,
+     11,
+     11
+    ],
+    "cold_files": [
+     60,
+     59,
+     58,
+     58,
+     58
+    ]
+   },
+   {
+    "hosts": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "driver": 0,
+    "cold_text": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "cold_names": [
+     12,
+     15,
+     10,
+     15
+    ],
+    "cold_files": [
+     73,
+     73,
+     73,
+     71
+    ]
+   },
+   {
+    "hosts": [
+     0,
+     0,
+     0
+    ],
+    "driver": 0,
+    "cold_text": [
+     0,
+     0,
+     0
+    ],
+    "cold_names": [
+     18,
+     19,
+     16
+    ],
+    "cold_files": [
+     95,
+     97,
+     95
+    ]
+   }
+  ],
+  "not_here": 0,
+  "copies_first": {
+   "h0": 2924,
+   "h1": 2867,
+   "h2": 2782,
+   "h3": 2817,
+   "h4": 2787
+  }
+ },
+ "pass": true
+}

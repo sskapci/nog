@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+*.egg-info/
+.pytest_cache/
+.claude/
+artifacts/
+data/
+# MetaQA question text: rebuilt from the public copy, never committed (experiments/baselines/rag_mq_text.py)
+reports/rag/mqs_test630.json
+reports/rag/mqs_dev100.json

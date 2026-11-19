@@ -1,0 +1,27 @@
+# job	commit	headline result (docs/results.md section)	note
+9976_neuron_rebalance	d9946e6	§4b live rebalancing 5→6→5, answers identical	HEAD of the working branch at start (rules 84ca908)
+9978_neuron_cold	3928753	§4b cold copies, two live kills	HEAD at start (rules f8894b3)
+9979_vk_test3	1a9d710	§2a 2Wiki test3 FLIES 39.70%	HEAD at start (rules 68c00ce)
+9980_neuron_repl	1a9d710	§4b replication R = 2	HEAD at start (rules 3928753)
+9981_neuron_locality	3ee4adf	§4b locality placement	pinned worktree
+9982b_baseline_vktest	63e18da	§2b text-reading baseline on test3 58.65% (baseline, not neurons)	pinned worktree; commit on the experiment branch conn; its two changed files in reproduce/9982b/
+9985a_mq_dev	49efe13	§3a MetaQA 1-hop dev gate	pinned worktree
+9985b_mq_test	49efe13	§3a MetaQA 1-hop test PARTLY 55.40%	pinned worktree
+9987a_mqmh_dev	f871f38	§3b MetaQA 2/3-hop dev	pinned worktree
+9987b_mqmh_test	f871f38	§3b MetaQA 2-hop 49.34% / 3-hop 13.45% FLIES	pinned worktree
+9990a_mqs_planner_train	8af9fb8	§3c sets planner	pinned worktree
+9991a_mqs_dev	368ce83	§3c sets dev	pinned worktree
+9991b_mqs_test	368ce83	§3c sets test, 6 cells FLY, 16.19%	pinned worktree
+9991g_cache_test	879ee8f	§4b slot cache 10,452 / 10,452 identical	pinned worktree
+9993a_biz_planner	6bc7678	§5 corpus A planner	pinned worktree
+9993b2_biz_dryrun	099e99d	§5 corpus A dry runs	pinned worktree
+9993c_biz_dev	099e99d	§5 corpus A dev	pinned worktree
+9993d_biz_test	099e99d	§5 corpus A test (1h_company FLIES)	pinned worktree
+9994a3b_bench_dry	0519f4a	§7–8 forget / edit dry runs	pinned worktree
+9994a4b_bench_forget	5799f50	§7 forgetting	pinned worktree
+9994a5_bench_edit	0519f4a	§8 updating	pinned worktree
+9994b_rag_mq_dev	c05e28d	§6 RAG MetaQA dev (baseline, not neurons)	pinned worktree
+9994c_rag_mq_test	c05e28d	§6 RAG MetaQA test (baseline, not neurons)	pinned worktree
+9994e_rag_bench	9a759b0	§7–8 RAG forget / edit arms (baseline, not neurons)	pinned worktree
+9994f_rag_biz_dev	2cc957e	§6 RAG corpus A dev (baseline, not neurons)	pinned worktree
+9994g_rag_biz_test	2cc957e	§6 RAG corpus A test (baseline, not neurons)	pinned worktree

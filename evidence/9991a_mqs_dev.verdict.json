@@ -1,0 +1,283 @@
+{
+ "theta_f": 0.7,
+ "gates": {
+  "1h_now": {
+   "pass": true,
+   "mcnemar_vs_all": [
+    389,
+    0,
+    1.5862136483222808e-117
+   ],
+   "mcnemar_vs_first": [
+    249,
+    85,
+    8.171383581806064e-20
+   ],
+   "exact_pct": {
+    "neuron": 53.9,
+    "all": 15.0,
+    "first": 37.5,
+    "oracle": 77.9,
+    "onehost": 53.9
+   },
+   "f1": {
+    "neuron": 57.18,
+    "all": 33.48,
+    "first": 37.5,
+    "oracle": 77.9
+   }
+  },
+  "1h_person": {
+   "pass": false,
+   "mcnemar_vs_all": [
+    60,
+    236,
+    7.732857788366312e-26
+   ],
+   "mcnemar_vs_first": [
+    336,
+    14,
+    3.319296804348361e-81
+   ],
+   "exact_pct": {
+    "neuron": 49.56,
+    "all": 71.64,
+    "first": 9.16,
+    "oracle": 81.05,
+    "onehost": 49.56
+   },
+   "f1": {
+    "neuron": 51.34,
+    "all": 82.31,
+    "first": 9.33,
+    "oracle": 83.63
+   }
+  },
+  "1h_person_sets": {
+   "pass": false,
+   "mcnemar_vs_all": [
+    29,
+    116,
+    1.5922199070946208e-13
+   ],
+   "mcnemar_vs_first": [
+    112,
+    3,
+    1.2209240289448442e-29
+   ],
+   "exact_pct": {
+    "neuron": 21.12,
+    "all": 36.82,
+    "first": 1.44,
+    "oracle": 50.18,
+    "onehost": 21.12
+   },
+   "f1": {
+    "neuron": 52.83,
+    "all": 76.77,
+    "first": 11.58,
+    "oracle": 83.59
+   }
+  },
+  "1h_sets": {
+   "pass": true,
+   "mcnemar_vs_all": [
+    67,
+    7,
+    2.1198660113131956e-13
+   ],
+   "mcnemar_vs_first": [
+    68,
+    0,
+    6.776263578034403e-21
+   ],
+   "exact_pct": {
+    "neuron": 7.66,
+    "all": 0.9,
+    "first": 0.0,
+    "oracle": 58.56,
+    "onehost": 7.66
+   },
+   "f1": {
+    "neuron": 37.37,
+    "all": 32.11,
+    "first": 7.1,
+    "oracle": 75.28
+   }
+  },
+  "2h_now": {
+   "pass": true,
+   "mcnemar_vs_all": [
+    81,
+    1,
+    3.432799542095065e-23
+   ],
+   "mcnemar_vs_first": [
+    77,
+    3,
+    1.4128410298528223e-19
+   ],
+   "exact_pct": {
+    "neuron": 43.09,
+    "all": 0.53,
+    "first": 3.72,
+    "oracle": 81.38,
+    "onehost": 43.09
+   },
+   "f1": {
+    "neuron": 46.02,
+    "all": 2.97,
+    "first": 4.76,
+    "oracle": 84.56
+   }
+  },
+  "2h_person": {
+   "pass": true,
+   "mcnemar_vs_all": [
+    146,
+    38,
+    3.973373933536242e-16
+   ],
+   "mcnemar_vs_first": [
+    201,
+    8,
+    1.9951439140867646e-49
+   ],
+   "exact_pct": {
+    "neuron": 21.4,
+    "all": 10.6,
+    "first": 2.1,
+    "oracle": 60.6,
+    "onehost": 21.4
+   },
+   "f1": {
+    "neuron": 24.31,
+    "all": 26.24,
+    "first": 2.3,
+    "oracle": 64.04
+   }
+  },
+  "2h_person_sets": {
+   "pass": true,
+   "mcnemar_vs_all": [
+    27,
+    7,
+    0.0008213953115046024
+   ],
+   "mcnemar_vs_first": [
+    32,
+    1,
+    7.916241884231567e-09
+   ],
+   "exact_pct": {
+    "neuron": 3.2,
+    "all": 1.2,
+    "first": 0.1,
+    "oracle": 34.7,
+    "onehost": 3.2
+   },
+   "f1": {
+    "neuron": 27.19,
+    "all": 23.83,
+    "first": 1.64,
+    "oracle": 59.33
+   }
+  },
+  "2h_sets": {
+   "pass": true,
+   "mcnemar_vs_all": [
+    189,
+    2,
+    1.168501054977431e-53
+   ],
+   "mcnemar_vs_first": [
+    189,
+    0,
+    2.5489470578119236e-57
+   ],
+   "exact_pct": {
+    "neuron": 19.1,
+    "all": 0.4,
+    "first": 0.2,
+    "oracle": 30.2,
+    "onehost": 19.1
+   },
+   "f1": {
+    "neuron": 62.24,
+    "all": 11.01,
+    "first": 5.63,
+    "oracle": 89.13
+   }
+  },
+  "3h_now": {
+   "pass": true,
+   "mcnemar_vs_all": [
+    151,
+    2,
+    2.0637623133343743e-42
+   ],
+   "mcnemar_vs_first": [
+    138,
+    54,
+    1.1470962400513951e-09
+   ],
+   "exact_pct": {
+    "neuron": 15.3,
+    "all": 0.4,
+    "first": 6.9,
+    "oracle": 42.9,
+    "onehost": 15.3
+   },
+   "f1": {
+    "neuron": 20.46,
+    "all": 0.99,
+    "first": 7.35,
+    "oracle": 51.46
+   }
+  },
+  "3h_sets": {
+   "pass": true,
+   "mcnemar_vs_all": [
+    17,
+    0,
+    1.52587890625e-05
+   ],
+   "mcnemar_vs_first": [
+    16,
+    0,
+    3.0517578125e-05
+   ],
+   "exact_pct": {
+    "neuron": 1.7,
+    "all": 0.0,
+    "first": 0.1,
+    "oracle": 12.3,
+    "onehost": 1.7
+   },
+   "f1": {
+    "neuron": 27.44,
+    "all": 2.61,
+    "first": 4.69,
+    "oracle": 54.6
+   }
+  }
+ },
+ "checks": {
+  "K": true,
+  "audit_zero": true,
+  "audit_sees_text": true,
+  "complete": true,
+  "five_eq_one": true
+ },
+ "pass": true,
+ "cells_to_test": [
+  "1h_now",
+  "1h_sets",
+  "2h_now",
+  "2h_person",
+  "2h_person_sets",
+  "2h_sets",
+  "3h_now",
+  "3h_sets"
+ ]
+}

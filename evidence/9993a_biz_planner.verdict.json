@@ -1,0 +1,9 @@
+{
+ "notice": "Fictional companies (synthetic data generated for this demo). Any resemblance to real companies or people is unintended.",
+ "pass": true,
+ "best": [
+  "2000",
+  "100.0"
+ ],
+ "rule": "hold-out exact >= 90%"
+}

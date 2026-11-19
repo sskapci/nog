@@ -1,0 +1,22 @@
+{
+ "tiers": {
+  "1h_now": "FLIES",
+  "1h_sets": "FLIES",
+  "2h_person": "FLIES",
+  "2h_person_sets": "FLIES",
+  "2h_sets": "FLIES",
+  "3h_sets": "FLIES"
+ },
+ "theta_f": 0.7,
+ "pass": {
+  "passed": true,
+  "tiers": {
+   "1h_now": "FLIES",
+   "1h_sets": "FLIES",
+   "2h_person": "FLIES",
+   "2h_person_sets": "FLIES",
+   "2h_sets": "FLIES",
+   "3h_sets": "FLIES"
+  }
+ }
+}

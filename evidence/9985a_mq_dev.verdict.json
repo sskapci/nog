@@ -1,0 +1,948 @@
+{
+ "fmin": 0.0,
+ "tau": null,
+ "bars": {
+  "directed_by": 49,
+  "starred_actors": 48,
+  "written_by": 48
+ },
+ "dev_pick_mcnemar_neuron_vs_first": [
+  569,
+  206,
+  3.988626697098337e-40
+ ],
+ "dev_pick_checks": {
+  "K": true,
+  "audit_zero": true,
+  "audit_sees_text": true,
+  "complete": true,
+  "five_eq_one": true
+ },
+ "tier": "FLIES",
+ "dev_pick_by_type": {
+  "directed_by": {
+   "neuron": {
+    "n": 569,
+    "em": 510,
+    "pct": 89.63,
+    "wilson": [
+     86.9,
+     91.9
+    ]
+   },
+   "first": {
+    "n": 569,
+    "em": 141,
+    "pct": 24.78,
+    "wilson": [
+     21.4,
+     28.5
+    ]
+   },
+   "oracle": {
+    "n": 569,
+    "em": 561,
+    "pct": 98.59,
+    "wilson": [
+     97.3,
+     99.3
+    ]
+   },
+   "onehost": {
+    "n": 569,
+    "em": 510,
+    "pct": 89.63,
+    "wilson": [
+     86.9,
+     91.9
+    ]
+   }
+  },
+  "has_genre": {
+   "neuron": {
+    "n": 332,
+    "em": 1,
+    "pct": 0.3,
+    "wilson": [
+     0.1,
+     1.7
+    ]
+   },
+   "first": {
+    "n": 332,
+    "em": 1,
+    "pct": 0.3,
+    "wilson": [
+     0.1,
+     1.7
+    ]
+   },
+   "oracle": {
+    "n": 332,
+    "em": 3,
+    "pct": 0.9,
+    "wilson": [
+     0.3,
+     2.6
+    ]
+   },
+   "onehost": {
+    "n": 332,
+    "em": 1,
+    "pct": 0.3,
+    "wilson": [
+     0.1,
+     1.7
+    ]
+   }
+  },
+  "has_imdb_rating": {
+   "neuron": {
+    "n": 10,
+    "em": 0,
+    "pct": 0.0,
+    "wilson": [
+     -0.0,
+     27.8
+    ]
+   },
+   "first": {
+    "n": 10,
+    "em": 0,
+    "pct": 0.0,
+    "wilson": [
+     -0.0,
+     27.8
+    ]
+   },
+   "oracle": {
+    "n": 10,
+    "em": 0,
+    "pct": 0.0,
+    "wilson": [
+     -0.0,
+     27.8
+    ]
+   },
+   "onehost": {
+    "n": 10,
+    "em": 0,
+    "pct": 0.0,
+    "wilson": [
+     -0.0,
+     27.8
+    ]
+   }
+  },
+  "has_imdb_votes": {
+   "neuron": {
+    "n": 3,
+    "em": 0,
+    "pct": 0.0,
+    "wilson": [
+     0.0,
+     56.2
+    ]
+   },
+   "first": {
+    "n": 3,
+    "em": 0,
+    "pct": 0.0,
+    "wilson": [
+     0.0,
+     56.2
+    ]
+   },
+   "oracle": {
+    "n": 3,
+    "em": 1,
+    "pct": 33.33,
+    "wilson": [
+     6.1,
+     79.2
+    ]
+   },
+   "onehost": {
+    "n": 3,
+    "em": 0,
+    "pct": 0.0,
+    "wilson": [
+     0.0,
+     56.2
+    ]
+   }
+  },
+  "has_tags": {
+   "neuron": {
+    "n": 162,
+    "em": 10,
+    "pct": 6.17,
+    "wilson": [
+     3.4,
+     11.0
+    ]
+   },
+   "first": {
+    "n": 162,
+    "em": 24,
+    "pct": 14.81,
+    "wilson": [
+     10.2,
+     21.1
+    ]
+   },
+   "oracle": {
+    "n": 162,
+    "em": 113,
+    "pct": 69.75,
+    "wilson": [
+     62.3,
+     76.3
+    ]
+   },
+   "onehost": {
+    "n": 162,
+    "em": 10,
+    "pct": 6.17,
+    "wilson": [
+     3.4,
+     11.0
+    ]
+   }
+  },
+  "in_language": {
+   "neuron": {
+    "n": 113,
+    "em": 30,
+    "pct": 26.55,
+    "wilson": [
+     19.3,
+     35.4
+    ]
+   },
+   "first": {
+    "n": 113,
+    "em": 62,
+    "pct": 54.87,
+    "wilson": [
+     45.7,
+     63.7
+    ]
+   },
+   "oracle": {
+    "n": 113,
+    "em": 93,
+    "pct": 82.3,
+    "wilson": [
+     74.2,
+     88.2
+    ]
+   },
+   "onehost": {
+    "n": 113,
+    "em": 30,
+    "pct": 26.55,
+    "wilson": [
+     19.3,
+     35.4
+    ]
+   }
+  },
+  "release_year": {
+   "neuron": {
+    "n": 645,
+    "em": 494,
+    "pct": 76.59,
+    "wilson": [
+     73.2,
+     79.7
+    ]
+   },
+   "first": {
+    "n": 645,
+    "em": 612,
+    "pct": 94.88,
+    "wilson": [
+     92.9,
+     96.3
+    ]
+   },
+   "oracle": {
+    "n": 645,
+    "em": 628,
+    "pct": 97.36,
+    "wilson": [
+     95.8,
+     98.3
+    ]
+   },
+   "onehost": {
+    "n": 645,
+    "em": 494,
+    "pct": 76.59,
+    "wilson": [
+     73.2,
+     79.7
+    ]
+   }
+  },
+  "starred_actors": {
+   "neuron": {
+    "n": 104,
+    "em": 52,
+    "pct": 50.0,
+    "wilson": [
+     40.6,
+     59.4
+    ]
+   },
+   "first": {
+    "n": 104,
+    "em": 7,
+    "pct": 6.73,
+    "wilson": [
+     3.3,
+     13.2
+    ]
+   },
+   "oracle": {
+    "n": 104,
+    "em": 97,
+    "pct": 93.27,
+    "wilson": [
+     86.8,
+     96.7
+    ]
+   },
+   "onehost": {
+    "n": 104,
+    "em": 52,
+    "pct": 50.0,
+    "wilson": [
+     40.6,
+     59.4
+    ]
+   }
+  },
+  "written_by": {
+   "neuron": {
+    "n": 302,
+    "em": 154,
+    "pct": 50.99,
+    "wilson": [
+     45.4,
+     56.6
+    ]
+   },
+   "first": {
+    "n": 302,
+    "em": 41,
+    "pct": 13.58,
+    "wilson": [
+     10.2,
+     17.9
+    ]
+   },
+   "oracle": {
+    "n": 302,
+    "em": 281,
+    "pct": 93.05,
+    "wilson": [
+     89.6,
+     95.4
+    ]
+   },
+   "onehost": {
+    "n": 302,
+    "em": 154,
+    "pct": 50.99,
+    "wilson": [
+     45.4,
+     56.6
+    ]
+   }
+  }
+ },
+ "dev_pick_cue_by_type": {
+  "directed_by": {
+   "neuron": {
+    "n": 569,
+    "em": 510,
+    "pct": 89.63,
+    "wilson": [
+     86.9,
+     91.9
+    ]
+   },
+   "first": {
+    "n": 569,
+    "em": 141,
+    "pct": 24.78,
+    "wilson": [
+     21.4,
+     28.5
+    ]
+   },
+   "oracle": {
+    "n": 569,
+    "em": 561,
+    "pct": 98.59,
+    "wilson": [
+     97.3,
+     99.3
+    ]
+   },
+   "onehost": {
+    "n": 569,
+    "em": 510,
+    "pct": 89.63,
+    "wilson": [
+     86.9,
+     91.9
+    ]
+   }
+  },
+  "has_genre": {
+   "neuron": {
+    "n": 0,
+    "em": 0,
+    "pct": null,
+    "wilson": null
+   },
+   "first": {
+    "n": 0,
+    "em": 0,
+    "pct": null,
+    "wilson": null
+   },
+   "oracle": {
+    "n": 0,
+    "em": 0,
+    "pct": null,
+    "wilson": null
+   },
+   "onehost": {
+    "n": 0,
+    "em": 0,
+    "pct": null,
+    "wilson": null
+   }
+  },
+  "has_imdb_rating": {
+   "neuron": {
+    "n": 0,
+    "em": 0,
+    "pct": null,
+    "wilson": null
+   },
+   "first": {
+    "n": 0,
+    "em": 0,
+    "pct": null,
+    "wilson": null
+   },
+   "oracle": {
+    "n": 0,
+    "em": 0,
+    "pct": null,
+    "wilson": null
+   },
+   "onehost": {
+    "n": 0,
+    "em": 0,
+    "pct": null,
+    "wilson": null
+   }
+  },
+  "has_imdb_votes": {
+   "neuron": {
+    "n": 0,
+    "em": 0,
+    "pct": null,
+    "wilson": null
+   },
+   "first": {
+    "n": 0,
+    "em": 0,
+    "pct": null,
+    "wilson": null
+   },
+   "oracle": {
+    "n": 0,
+    "em": 0,
+    "pct": null,
+    "wilson": null
+   },
+   "onehost": {
+    "n": 0,
+    "em": 0,
+    "pct": null,
+    "wilson": null
+   }
+  },
+  "has_tags": {
+   "neuron": {
+    "n": 0,
+    "em": 0,
+    "pct": null,
+    "wilson": null
+   },
+   "first": {
+    "n": 0,
+    "em": 0,
+    "pct": null,
+    "wilson": null
+   },
+   "oracle": {
+    "n": 0,
+    "em": 0,
+    "pct": null,
+    "wilson": null
+   },
+   "onehost": {
+    "n": 0,
+    "em": 0,
+    "pct": null,
+    "wilson": null
+   }
+  },
+  "in_language": {
+   "neuron": {
+    "n": 0,
+    "em": 0,
+    "pct": null,
+    "wilson": null
+   },
+   "first": {
+    "n": 0,
+    "em": 0,
+    "pct": null,
+    "wilson": null
+   },
+   "oracle": {
+    "n": 0,
+    "em": 0,
+    "pct": null,
+    "wilson": null
+   },
+   "onehost": {
+    "n": 0,
+    "em": 0,
+    "pct": null,
+    "wilson": null
+   }
+  },
+  "release_year": {
+   "neuron": {
+    "n": 0,
+    "em": 0,
+    "pct": null,
+    "wilson": null
+   },
+   "first": {
+    "n": 0,
+    "em": 0,
+    "pct": null,
+    "wilson": null
+   },
+   "oracle": {
+    "n": 0,
+    "em": 0,
+    "pct": null,
+    "wilson": null
+   },
+   "onehost": {
+    "n": 0,
+    "em": 0,
+    "pct": null,
+    "wilson": null
+   }
+  },
+  "starred_actors": {
+   "neuron": {
+    "n": 104,
+    "em": 52,
+    "pct": 50.0,
+    "wilson": [
+     40.6,
+     59.4
+    ]
+   },
+   "first": {
+    "n": 104,
+    "em": 7,
+    "pct": 6.73,
+    "wilson": [
+     3.3,
+     13.2
+    ]
+   },
+   "oracle": {
+    "n": 104,
+    "em": 97,
+    "pct": 93.27,
+    "wilson": [
+     86.8,
+     96.7
+    ]
+   },
+   "onehost": {
+    "n": 104,
+    "em": 52,
+    "pct": 50.0,
+    "wilson": [
+     40.6,
+     59.4
+    ]
+   }
+  },
+  "written_by": {
+   "neuron": {
+    "n": 302,
+    "em": 154,
+    "pct": 50.99,
+    "wilson": [
+     45.4,
+     56.6
+    ]
+   },
+   "first": {
+    "n": 302,
+    "em": 41,
+    "pct": 13.58,
+    "wilson": [
+     10.2,
+     17.9
+    ]
+   },
+   "oracle": {
+    "n": 302,
+    "em": 281,
+    "pct": 93.05,
+    "wilson": [
+     89.6,
+     95.4
+    ]
+   },
+   "onehost": {
+    "n": 302,
+    "em": 154,
+    "pct": 50.99,
+    "wilson": [
+     45.4,
+     56.6
+    ]
+   }
+  }
+ },
+ "dev_pick_mcnemar_by_type": {
+  "directed_by": [
+   375,
+   6,
+   1.6850192667981302e-102
+  ],
+  "has_genre": [
+   0,
+   0,
+   1.0
+  ],
+  "has_imdb_rating": [
+   0,
+   0,
+   1.0
+  ],
+  "has_imdb_votes": [
+   0,
+   0,
+   1.0
+  ],
+  "has_tags": [
+   2,
+   16,
+   0.001312255859375
+  ],
+  "in_language": [
+   5,
+   37,
+   4.4337048166198656e-07
+  ],
+  "release_year": [
+   7,
+   125,
+   4.581478055141831e-29
+  ],
+  "starred_actors": [
+   48,
+   3,
+   1.9674928353197174e-11
+  ],
+  "written_by": [
+   132,
+   19,
+   5.175862923123505e-22
+  ]
+ },
+ "dev_pick_hop2": {
+  "neuron": {
+   "directed_by": {
+    "chains_needing_hop2": 569,
+    "reached_hop2": 0,
+    "dont_know_at_hop2": 0,
+    "dont_know_rate_pct": null,
+    "f_below_0.5_at_hop2": 0
+   },
+   "has_genre": {
+    "chains_needing_hop2": 332,
+    "reached_hop2": 0,
+    "dont_know_at_hop2": 0,
+    "dont_know_rate_pct": null,
+    "f_below_0.5_at_hop2": 0
+   },
+   "has_imdb_rating": {
+    "chains_needing_hop2": 10,
+    "reached_hop2": 0,
+    "dont_know_at_hop2": 0,
+    "dont_know_rate_pct": null,
+    "f_below_0.5_at_hop2": 0
+   },
+   "has_imdb_votes": {
+    "chains_needing_hop2": 3,
+    "reached_hop2": 0,
+    "dont_know_at_hop2": 0,
+    "dont_know_rate_pct": null,
+    "f_below_0.5_at_hop2": 0
+   },
+   "has_tags": {
+    "chains_needing_hop2": 162,
+    "reached_hop2": 0,
+    "dont_know_at_hop2": 0,
+    "dont_know_rate_pct": null,
+    "f_below_0.5_at_hop2": 0
+   },
+   "in_language": {
+    "chains_needing_hop2": 113,
+    "reached_hop2": 0,
+    "dont_know_at_hop2": 0,
+    "dont_know_rate_pct": null,
+    "f_below_0.5_at_hop2": 0
+   },
+   "release_year": {
+    "chains_needing_hop2": 644,
+    "reached_hop2": 0,
+    "dont_know_at_hop2": 0,
+    "dont_know_rate_pct": null,
+    "f_below_0.5_at_hop2": 0
+   },
+   "starred_actors": {
+    "chains_needing_hop2": 104,
+    "reached_hop2": 0,
+    "dont_know_at_hop2": 0,
+    "dont_know_rate_pct": null,
+    "f_below_0.5_at_hop2": 0
+   },
+   "written_by": {
+    "chains_needing_hop2": 302,
+    "reached_hop2": 0,
+    "dont_know_at_hop2": 0,
+    "dont_know_rate_pct": null,
+    "f_below_0.5_at_hop2": 0
+   }
+  },
+  "first": {
+   "directed_by": {
+    "chains_needing_hop2": 569,
+    "reached_hop2": 0,
+    "dont_know_at_hop2": 0,
+    "dont_know_rate_pct": null,
+    "f_below_0.5_at_hop2": 0
+   },
+   "has_genre": {
+    "chains_needing_hop2": 332,
+    "reached_hop2": 0,
+    "dont_know_at_hop2": 0,
+    "dont_know_rate_pct": null,
+    "f_below_0.5_at_hop2": 0
+   },
+   "has_imdb_rating": {
+    "chains_needing_hop2": 10,
+    "reached_hop2": 0,
+    "dont_know_at_hop2": 0,
+    "dont_know_rate_pct": null,
+    "f_below_0.5_at_hop2": 0
+   },
+   "has_imdb_votes": {
+    "chains_needing_hop2": 3,
+    "reached_hop2": 0,
+    "dont_know_at_hop2": 0,
+    "dont_know_rate_pct": null,
+    "f_below_0.5_at_hop2": 0
+   },
+   "has_tags": {
+    "chains_needing_hop2": 162,
+    "reached_hop2": 0,
+    "dont_know_at_hop2": 0,
+    "dont_know_rate_pct": null,
+    "f_below_0.5_at_hop2": 0
+   },
+   "in_language": {
+    "chains_needing_hop2": 113,
+    "reached_hop2": 0,
+    "dont_know_at_hop2": 0,
+    "dont_know_rate_pct": null,
+    "f_below_0.5_at_hop2": 0
+   },
+   "release_year": {
+    "chains_needing_hop2": 644,
+    "reached_hop2": 0,
+    "dont_know_at_hop2": 0,
+    "dont_know_rate_pct": null,
+    "f_below_0.5_at_hop2": 0
+   },
+   "starred_actors": {
+    "chains_needing_hop2": 104,
+    "reached_hop2": 0,
+    "dont_know_at_hop2": 0,
+    "dont_know_rate_pct": null,
+    "f_below_0.5_at_hop2": 0
+   },
+   "written_by": {
+    "chains_needing_hop2": 302,
+    "reached_hop2": 0,
+    "dont_know_at_hop2": 0,
+    "dont_know_rate_pct": null,
+    "f_below_0.5_at_hop2": 0
+   }
+  },
+  "oracle": {
+   "directed_by": {
+    "chains_needing_hop2": 569,
+    "reached_hop2": 0,
+    "dont_know_at_hop2": 0,
+    "dont_know_rate_pct": null,
+    "f_below_0.5_at_hop2": 0
+   },
+   "has_genre": {
+    "chains_needing_hop2": 332,
+    "reached_hop2": 0,
+    "dont_know_at_hop2": 0,
+    "dont_know_rate_pct": null,
+    "f_below_0.5_at_hop2": 0
+   },
+   "has_imdb_rating": {
+    "chains_needing_hop2": 10,
+    "reached_hop2": 0,
+    "dont_know_at_hop2": 0,
+    "dont_know_rate_pct": null,
+    "f_below_0.5_at_hop2": 0
+   },
+   "has_imdb_votes": {
+    "chains_needing_hop2": 3,
+    "reached_hop2": 0,
+    "dont_know_at_hop2": 0,
+    "dont_know_rate_pct": null,
+    "f_below_0.5_at_hop2": 0
+   },
+   "has_tags": {
+    "chains_needing_hop2": 162,
+    "reached_hop2": 0,
+    "dont_know_at_hop2": 0,
+    "dont_know_rate_pct": null,
+    "f_below_0.5_at_hop2": 0
+   },
+   "in_language": {
+    "chains_needing_hop2": 113,
+    "reached_hop2": 0,
+    "dont_know_at_hop2": 0,
+    "dont_know_rate_pct": null,
+    "f_below_0.5_at_hop2": 0
+   },
+   "release_year": {
+    "chains_needing_hop2": 644,
+    "reached_hop2": 0,
+    "dont_know_at_hop2": 0,
+    "dont_know_rate_pct": null,
+    "f_below_0.5_at_hop2": 0
+   },
+   "starred_actors": {
+    "chains_needing_hop2": 104,
+    "reached_hop2": 0,
+    "dont_know_at_hop2": 0,
+    "dont_know_rate_pct": null,
+    "f_below_0.5_at_hop2": 0
+   },
+   "written_by": {
+    "chains_needing_hop2": 302,
+    "reached_hop2": 0,
+    "dont_know_at_hop2": 0,
+    "dont_know_rate_pct": null,
+    "f_below_0.5_at_hop2": 0
+   }
+  },
+  "onehost": {
+   "directed_by": {
+    "chains_needing_hop2": 569,
+    "reached_hop2": 0,
+    "dont_know_at_hop2": 0,
+    "dont_know_rate_pct": null,
+    "f_below_0.5_at_hop2": 0
+   },
+   "has_genre": {
+    "chains_needing_hop2": 332,
+    "reached_hop2": 0,
+    "dont_know_at_hop2": 0,
+    "dont_know_rate_pct": null,
+    "f_below_0.5_at_hop2": 0
+   },
+   "has_imdb_rating": {
+    "chains_needing_hop2": 10,
+    "reached_hop2": 0,
+    "dont_know_at_hop2": 0,
+    "dont_know_rate_pct": null,
+    "f_below_0.5_at_hop2": 0
+   },
+   "has_imdb_votes": {
+    "chains_needing_hop2": 3,
+    "reached_hop2": 0,
+    "dont_know_at_hop2": 0,
+    "dont_know_rate_pct": null,
+    "f_below_0.5_at_hop2": 0
+   },
+   "has_tags": {
+    "chains_needing_hop2": 162,
+    "reached_hop2": 0,
+    "dont_know_at_hop2": 0,
+    "dont_know_rate_pct": null,
+    "f_below_0.5_at_hop2": 0
+   },
+   "in_language": {
+    "chains_needing_hop2": 113,
+    "reached_hop2": 0,
+    "dont_know_at_hop2": 0,
+    "dont_know_rate_pct": null,
+    "f_below_0.5_at_hop2": 0
+   },
+   "release_year": {
+    "chains_needing_hop2": 644,
+    "reached_hop2": 0,
+    "dont_know_at_hop2": 0,
+    "dont_know_rate_pct": null,
+    "f_below_0.5_at_hop2": 0
+   },
+   "starred_actors": {
+    "chains_needing_hop2": 104,
+    "reached_hop2": 0,
+    "dont_know_at_hop2": 0,
+    "dont_know_rate_pct": null,
+    "f_below_0.5_at_hop2": 0
+   },
+   "written_by": {
+    "chains_needing_hop2": 302,
+    "reached_hop2": 0,
+    "dont_know_at_hop2": 0,
+    "dont_know_rate_pct": null,
+    "f_below_0.5_at_hop2": 0
+   }
+  }
+ },
+ "pass": true
+}

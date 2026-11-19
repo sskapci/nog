@@ -1,0 +1,39 @@
+{
+ "prefix": "mqs",
+ "cells": [
+  "1h_now",
+  "1h_sets",
+  "2h_person",
+  "2h_person_sets",
+  "2h_sets",
+  "3h_sets"
+ ],
+ "seed_test": 20261115,
+ "seed_dev": 20261116,
+ "files": {
+  "mqs_test630.json": {
+   "n": 630,
+   "per_cell": {
+    "1h_now": 105,
+    "1h_sets": 105,
+    "2h_person": 105,
+    "2h_person_sets": 105,
+    "2h_sets": 105,
+    "3h_sets": 105
+   },
+   "sha256": "8a9d1bc39403bcb36c1a238a456a4c7958bc465f73f20bb8c0ca21fc5533cc69"
+  },
+  "mqs_dev100.json": {
+   "n": 100,
+   "per_cell": {
+    "1h_now": 17,
+    "1h_sets": 16,
+    "2h_person": 17,
+    "2h_person_sets": 17,
+    "2h_sets": 17,
+    "3h_sets": 16
+   },
+   "sha256": "b0958f91b3bd71f4e003457491ac4952f1b01f2ff7dc8ae2cd5fd37626a4c5d7"
+  }
+ }
+}

@@ -1,0 +1,29 @@
+# Contributor License Agreement check (CLA.md). On a contributor's first pull request the bot asks them to sign by
+# commenting the sentence below; signatures are recorded in signatures/version1/cla.json on main.
+name: CLA Assistant
+on:
+  issue_comment:
+    types: [created]
+  pull_request_target:
+    types: [opened, closed, synchronize]
+permissions:
+  actions: write
+  contents: write
+  pull-requests: write
+  statuses: write
+jobs:
+  cla:
+    if: github.repository == 'sskapci/nog'   # public repository only
+    runs-on: ubuntu-latest
+    steps:
+      - name: CLA Assistant
+        if: (github.event.comment.body == 'recheck' || github.event.comment.body == 'I have read the CLA Document and I hereby sign the CLA') || github.event_name == 'pull_request_target'
+        # contributor-assistant/github-action v2.6.1
+        uses: contributor-assistant/github-action@ca4a40a7d1004f18d9960b404b97e5f30a505a08
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          path-to-signatures: 'signatures/version1/cla.json'
+          path-to-document: 'https://github.com/sskapci/nog/blob/main/CLA.md'
+          branch: 'main'
+          allowlist: 'sskapci,dependabot[bot],github-actions[bot]'
