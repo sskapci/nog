@@ -14,6 +14,12 @@ touching anything else — on ordinary CPUs.
 
 This is a research prototype, not a product. See *Limits* below.
 
+> **Security warning.** In this release, host ports accept data that can execute code: KU packages sent between
+> hosts and cold copies are opened with Python pickle, so anyone who can send data to a host port can run arbitrary
+> code on that machine. **Never make host ports reachable from an untrusted network** — run NOG only on one machine
+> or inside a network where only your own hosts can connect. A fixed release (no pickle; JSON + safetensors) is in
+> preparation.
+
 ## Architecture
 
 ```mermaid
@@ -91,7 +97,7 @@ for per-question latency, intervals and full details.
 - Facts expressed only by document layout (e.g. dates in parentheses) are largely unlearnable when each KU learns only from its own text.
 - The planner fails on question wordings it hasn't seen.
 - Tested on template-style questions, on one machine.
-- No authentication or encryption between hosts: trusted networks only.
+- No authentication or encryption between hosts, and host ports accept data that can execute code (see the security warning above): trusted networks only.
 
 ## Quick start
 
