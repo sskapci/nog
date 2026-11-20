@@ -20,6 +20,7 @@ import resource
 import sys
 import time
 from pathlib import Path
+from mxn.common.safeload import pickle_load  # no code execution from data files (2026-11-20)
 
 EMB = "BAAI/bge-small-en-v1.5"
 QPREFIX = "Represent this sentence for searching relevant passages: "      # bge query instruction
@@ -41,7 +42,7 @@ def proc_cpu(pid: int) -> float:
 
 
 def docs_of(pool: str) -> list[dict]:
-    M = pickle.load(open(pool, "rb"))
+    M = pickle_load(pool)
     sents = {k: [] for k in range(len(M["titles"]))}
     for s, o in zip(M["sentences"], M["owner"]):
         sents[o].append(s)

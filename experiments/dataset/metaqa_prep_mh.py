@@ -18,6 +18,7 @@ import collections, json, os, pickle, re, sys
 from pathlib import Path
 
 import numpy as np
+from mxn.common.safeload import pickle_load  # no code execution from data files (2026-11-20)
 
 wm, mq, pathf, ex, dout, xout, ids_dir = (Path(a) for a in sys.argv[1:8])
 SEED, SPLIT_SEED, HOLD_SEED, N_TEST = 20261108, 20261109, 20261110, 2000
@@ -142,7 +143,7 @@ for name, qs in pools.items():
                                 "type": f"{n}hop:" + ">".join(tpl_path[f'{n}-hop'][q['tpl']]), "gold": [q["doc"]]}
                                for q in qs]}, open(xout / f"pool_{name}.pkl", "wb"))
 for name in ("dev", "test"):                    # one run per arm serves both hop counts (scored apart by ids)
-    qs = [q for n in "23" for q in pickle.load(open(xout / f"pool_mq{n}{name}.pkl", "rb"))["questions"]]
+    qs = [q for n in "23" for q in pickle_load(xout / f"pool_mq{n}{name}.pkl")["questions"]]
     pickle.dump({"titles": titles, "sentences": flat, "owner": owner, "questions": qs},
                 open(xout / f"pool_mqmh{name}.pkl", "wb"))
 for f in ("enc", "tok16k.model", "country_table.json", "step7_dev.json"):

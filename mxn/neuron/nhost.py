@@ -28,7 +28,7 @@ Frames (mxn/common/frames.py), JSON payloads; every request gets one reply frame
                                    drop: routing switches to the new list; KUs that left are forgotten here;
                                    done: broadcasts reach the new hosts only.
                                    A task for a KU this host does not hold goes on to its owner under this host's list.
-  MOVE     {from, blob}          → {stored}: KU packages (torch.save, base64) kept until the add phase
+  MOVE     {from, blob}          → {stored}: KU packages (mxn/neuron/kupack.py, base64; no pickle) kept until the add phase
   COLD     {phase, gen, hosts?}  → cold copies (reports/design_neuron_cold.md), R = 1:
                                    write: every own KU's package (no text) is sent to its successor, the second host
                                    in its rendezvous order over the current list (COLDPUT), which stores it on its own
@@ -78,7 +78,7 @@ hop, k, title, value, kind, target, f, how, final, host}.
 Security: frames are not authenticated or encrypted. Use only on one machine or inside a trusted LAN, with the
 hosts' ports (7400-7409, resultant 7499) open between the machines and closed to everything else.
 
-    python -m mxn.neuron.nhost --name h0 --hostlist HOSTS.json --shard SHARD.pkl --expert artifacts/expert
+    python -m mxn.neuron.nhost --name h0 --hostlist HOSTS.json --shard SHARD.json --expert artifacts/expert
 """
 
 from __future__ import annotations
@@ -92,7 +92,6 @@ import hashlib
 import io
 import json
 import os
-import pickle
 import threading
 import time
 import types
@@ -107,6 +106,7 @@ from mxn.common.frames import frame, open_conn, read_frame, serve
 from mxn.common.textkeys import _DISAMBIG
 from mxn.expert.hostindex import HostTitleIndex, KUTitle, merge, title_vector
 from mxn.expert.extractor import dates_rule
+from mxn.neuron import kupack
 from mxn.neuron.nku import Settings, build, package, unpackage
 
 TRAIN, WIRE, RESOLVEB, DROPTEXT, AUDIT, TASKS, STATS, STOP, FINDINGS, REPLY = range(40, 50)
@@ -239,10 +239,11 @@ class NeuronHost:
         t0 = time.process_time()
         keys, tag, resumed = sorted(self.shard), {"settings": vars(st), "arm": self.arm}, 0
         for c in range(0, len(keys), CHUNK):
-            f = self.ckpt / f"chunk_{c // CHUNK:04d}.pt" if self.ckpt else None
+            f = self.ckpt / f"chunk_{c // CHUNK:04d}.nku" if self.ckpt else None
             if f is not None and f.exists():                 # resume: same settings, same KUs, text from the shard
-                d = torch.load(f, weights_only=False)
-                assert d["tag"] == tag and [u["k"] for u in d["kus"]] == keys[c: c + CHUNK], f"checkpoint mismatch {f}"
+                kus, extra = kupack.loads(f.read_bytes())
+                d = {"tag": extra.get("tag"), "kus": kus}
+                assert d["tag"] == json.loads(json.dumps(tag)) and [u["k"] for u in d["kus"]] == keys[c: c + CHUNK], f"checkpoint mismatch {f}"
                 for u in map(unpackage, d["kus"]):
                     u.text = list(self.shard[u.k][1]); self.kus[u.k] = u
                 resumed += len(d["kus"])
@@ -253,7 +254,8 @@ class NeuronHost:
                     self.kus[k] = build(k, v[0], v[1], self.enc, st, gold, self.equiv)
                 if f is not None:
                     f.parent.mkdir(parents=True, exist_ok=True)
-                    torch.save({"tag": tag, "kus": [package(self.kus[k]) for k in keys[c: c + CHUNK]]}, f.with_suffix(".tmp"))
+                    f.with_suffix(".tmp").write_bytes(kupack.dumps([package(self.kus[k]) for k in keys[c: c + CHUNK]],
+                                                                   {"tag": tag}))
                     f.with_suffix(".tmp").rename(f)
             for k in keys[c: c + CHUNK]:                     # memory only (answers unchanged): no grads kept,
                 for q in self.kus[k].net.parameters():       # freed training buffers returned to the system
@@ -707,8 +709,7 @@ class NeuronHost:
         raise ValueError(phase)
 
     def pack(self, ks: list) -> str:
-        b = io.BytesIO(); torch.save([package(self.kus[k]) for k in ks], b)
-        return base64.b64encode(b.getvalue()).decode()
+        return base64.b64encode(kupack.dumps([package(self.kus[k]) for k in ks])).decode()
 
     # ---- cold copies (COLD / COLDPUT), R = 1
     async def cold_phase(self, phase: str, gen: int, hosts: dict | None) -> dict:
@@ -728,7 +729,7 @@ class NeuronHost:
                     assert r is not None and r["stored"] == len(ks[c: c + MOVE_CHUNK]), f"COLDPUT to {h} failed"
             return {"host": self.name, "sent": {h: len(ks) for h, ks in out.items()}}
         if phase == "commit":
-            for f in self.cold.glob("g*_*.pt"):
+            for f in self.cold.glob("g*_*.nku"):
                 if int(f.name[1:].split("_")[0]) < gen:
                     f.unlink()
             for g in [g for g in self.cold_ids if g < gen]:
@@ -738,8 +739,8 @@ class NeuronHost:
         if phase == "restore":
             new = sorted(hosts); n = 0
             loop = asyncio.get_running_loop()
-            for f in sorted(self.cold.glob("g*_*.pt")):          # every copy on this disk (older ones: deleted at commit)
-                ps = await loop.run_in_executor(None, lambda f=f: torch.load(f, weights_only=False))
+            for f in sorted(self.cold.glob("g*_*.nku")):         # every copy on this disk (older ones: deleted at commit)
+                ps = await loop.run_in_executor(None, lambda f=f: kupack.loads(f.read_bytes())[0])
                 for d in ps:
                     if order(d.get("key", d["k"]), new)[0] == self.name and d["k"] not in self.kus \
                             and d["k"] not in self.incoming:
@@ -747,15 +748,15 @@ class NeuronHost:
             return {"host": self.name, "restored": n}
         if phase == "audit":
             hits, names = set(), set()
-            for f in sorted(self.cold.glob("g*_*.pt")):
-                ps = torch.load(f, weights_only=False)
+            for f in sorted(self.cold.glob("g*_*.nku")):
+                ps = kupack.loads(f.read_bytes())[0]
                 own = name_kinds([d["title"] for d in ps], [sl["label"] for d in ps for sl in d["slots"]], self.sha)
                 for x in _all_strings(ps):
                     h = hashlib.sha1(x.encode()).hexdigest()
                     if len(x) > 20 and h in self.sha:                 # as text_in_memory; names held as KU state apart
                         (names if h in own else hits).add(h)
             return {"host": self.name, "cold_text": len(hits), "cold_names": len(names),
-                    "files": len(list(self.cold.glob("g*_*.pt")))}
+                    "files": len(list(self.cold.glob("g*_*.nku")))}
         raise ValueError(phase)
 
     # ---- forgetting and editing (reports/design_forget_edit.md)
@@ -783,13 +784,13 @@ class NeuronHost:
                         c["target"] = None; c.pop("tkey", None); cleared += 1
         cold_deleted = 0
         if self.cold is not None and self.cold.exists() and not os.environ.get("NHOST_FORGET_KEEP_COLD"):
-            for f in sorted(self.cold.glob("g*_*.pt")):
-                ps = torch.load(f, weights_only=False)
+            for f in sorted(self.cold.glob("g*_*.nku")):
+                ps = kupack.loads(f.read_bytes())[0]
                 keep = [d for d in ps if d["k"] not in ids]
                 if len(keep) != len(ps):
                     cold_deleted += len(ps) - len(keep)
                     if keep:
-                        torch.save(keep, f.with_suffix(".tmp")); f.with_suffix(".tmp").rename(f)
+                        f.with_suffix(".tmp").write_bytes(kupack.dumps(keep)); f.with_suffix(".tmp").rename(f)
                     else:
                         f.unlink()
             for g in self.cold_ids:
@@ -828,8 +829,8 @@ class NeuronHost:
         r["parameter_modules"] = tens
         cold = 0
         if self.cold is not None and self.cold.exists():
-            for f in sorted(self.cold.glob("g*_*.pt")):
-                cold += sum(d["k"] in ids or d.get("title") in titles for d in torch.load(f, weights_only=False))
+            for f in sorted(self.cold.glob("g*_*.nku")):
+                cold += sum(d["k"] in ids or d.get("title") in titles for d in kupack.loads(f.read_bytes())[0])
         r["cold"] = cold
         r["total"] = sum(v for k, v in r.items() if k != "host")
         return r
@@ -878,22 +879,21 @@ class NeuronHost:
         if getattr(self, "cold_text", None):                     # known-bad only (NHOST_COLD_TEXT)
             for d in ps:
                 d["stats"] = {**d["stats"], "text": self.cold_text.get(d["k"], [])}
-        b = io.BytesIO(); torch.save(ps, b)
-        return base64.b64encode(b.getvalue()).decode()
+        return base64.b64encode(kupack.dumps(ps)).decode()
 
     def cold_put(self, m: dict) -> int:
         raw = base64.b64decode(m["blob"])
-        ks = [d["k"] for d in torch.load(io.BytesIO(raw), weights_only=False)]
+        ks = [d["k"] for d in kupack.loads(raw)[0]]                 # validated; a non-package blob is refused
         if os.environ.get("NHOST_COLD_SKIP"):                     # known-bad only: the copy is never stored
             return len(ks)
         self.cold.mkdir(parents=True, exist_ok=True)
-        f = self.cold / f"g{m['gen']}_{m['from']}_{m['i']:05d}.pt"
+        f = self.cold / f"g{m['gen']}_{m['from']}_{m['i']:05d}.nku"
         f.with_suffix(".tmp").write_bytes(raw); f.with_suffix(".tmp").rename(f)
         self.cold_ids[m["gen"]] |= set(ks)
         return len(ks)
 
     def move_in(self, blob: str) -> int:
-        ps = torch.load(io.BytesIO(base64.b64decode(blob)), weights_only=False)
+        ps = kupack.loads(base64.b64decode(blob))[0]                 # validated; a non-package blob is refused
         for d in ps:
             u = unpackage(d)
             if os.environ.get("NHOST_PERTURB_MOVE"):              # known-bad (dry runs only): a moved KU changes
@@ -990,7 +990,7 @@ def main():
     if os.environ.get("NHOST_MEMPROBE"):
         memprobe(a.name, float(os.environ["NHOST_MEMPROBE"]))
     hosts = json.load(open(a.hostlist))
-    shard = pickle.load(open(a.shard, "rb"))
+    shard = {int(k): v for k, v in json.load(open(a.shard)).items()}  # JSON (no pickle): {k: [title, sentences(, gold)]}
     workers = a.workers
     if os.environ.get("NHOST_PIN"):     # CPU investigation: host i of H gets its own share of the cores; threads <= share
         cpus = sorted(os.sched_getaffinity(0)); H = len(hosts); i = sorted(hosts).index(a.name)

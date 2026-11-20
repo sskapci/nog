@@ -40,7 +40,7 @@ class Encoder:
         import sentencepiece as spm
 
         torch.set_num_threads(threads)
-        ck = torch.load(f"{model_dir}/model.pt", map_location="cpu")
+        ck = torch.load(f"{model_dir}/model.pt", map_location="cpu", weights_only=True)
         self.net = BiEncoder(**ck["config"]); self.net.load_state_dict(ck["state"]); self.net.eval()
         self.sp = spm.SentencePieceProcessor(model_file=tokenizer)
         self.passage_title = ck.get("passage_title", False)

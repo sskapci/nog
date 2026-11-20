@@ -12,11 +12,12 @@ import yaml
 
 from mxn.expert.encoder import Encoder
 from mxn.ku.store import KU, write_store
+from mxn.common.safeload import pickle_load  # no code execution from data files (2026-11-20)
 
 opts = dict(a[2:].split("=", 1) for a in sys.argv if a.startswith("--"))
 ex, mdir, out = [Path(a) for a in sys.argv[1:] if not a.startswith("--")][:3]
 model = yaml.safe_load(open("config_expert.yaml"))["embedding"]["model"]
-P = pickle.load(open(ex / opts["pool"], "rb")); by = {}
+P = pickle_load(ex / opts["pool"]); by = {}
 for s_, o in zip(P["sentences"], P["owner"]):
     by.setdefault(o, []).append(s_)
 src = [(f"m{k}", t, by[k]) for k, t in enumerate(P["titles"]) if by.get(k)][: int(opts.get("limit", 10 ** 9))]

@@ -9,6 +9,9 @@ wrapper that re-runs it with the code of that commit. Each job's rules and verdi
 reproduce/run_job.sh JOB DATA_DIR VENV_DIR [WORK_DIR]      # REPRODUCE_DRY=1 to set up without running
 ```
 
+**Security:** the job archives are the exact code each job ran, from before the 2026-11-20 security fix; their hosts
+open KU packages with Python pickle. Run reproductions only on an isolated machine (see the security notice in README.md).
+
 The code of each job commit is a source archive attached to this snapshot's GitHub release (`snapshot-2026-11-19`;
 SHA-256 checksums in `reproduce/SHA256SUMS`; `REPRODUCE_ARCHIVES=DIR` uses archives already downloaded). The wrapper downloads
 the job's archive, checks its checksum, unpacks it into `WORK_DIR/JOB`, links `artifacts/` to your prepared inputs and `.venv/` to your

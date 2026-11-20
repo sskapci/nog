@@ -44,6 +44,7 @@ from pathlib import Path
 import numpy as np
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+from mxn.common.safeload import pickle_load  # no code execution from data files (2026-11-20)
 from experiments.dataset import demo_gen as G                      # noqa: E402  (wording lists, NOTICE)
 
 HOLD_SEED, SPLIT_SEED, TEST_SEED, SMOKE_SEED = 20261117, 20261118, 20261119, 20261120
@@ -101,7 +102,7 @@ def evidences(q: dict, path: list[str], kb: dict) -> list[list[str]]:
 
 
 def main(a3: Path, expert: Path, data_out: Path, ex_out: Path, ids_dir: Path, smoke: Path) -> None:
-    P = pickle.load(open(a3 / "pool.pkl", "rb"))
+    P = pickle_load(a3 / "pool.pkl")
     kb = json.load(open(a3 / "kb.json"))["kb"]
     titles, sents, owner = P["titles"], P["sentences"], np.asarray(P["owner"], dtype=np.int32)
     tix = {t: i for i, t in enumerate(titles)}

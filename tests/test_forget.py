@@ -6,6 +6,7 @@ import types
 
 import torch
 
+from mxn.neuron import kupack
 from mxn.neuron.nhost import NeuronHost
 
 
@@ -37,7 +38,7 @@ def _host(tmp_path):
         h._cache_add(k)
     h._cache_ids = set(h.kus)
     h.cold = tmp_path / "cold"; h.cold.mkdir()
-    torch.save([{"k": 1, "title": "Acme Labs"}, {"k": 3, "title": "Cyra Works"}], h.cold / "g1_h1_00000.pt")
+    (h.cold / "g1_h1_00000.nku").write_bytes(kupack.dumps([{"k": 1, "title": "Acme Labs"}, {"k": 3, "title": "Cyra Works"}]))
     h.cold_ids = {1: {1, 3}}
     return h
 

@@ -32,6 +32,7 @@ import time
 
 from mxn.expert.fhost import (ADD, DROP, EDIT, EDITV, FIND, FOUND, OK, RESOLVE, RESOLVED, VIA, VIAR, WHO, FindHost)
 from mxn.common.frames import frame, open_conn, read_frame
+from mxn.common.safeload import pickle_load  # no code execution from data files (2026-11-20)
 
 REPLICATE, SYNC, PULL, REJOIN = 19, 20, 21, 22
 FEEDBACK = 23
@@ -574,7 +575,7 @@ def main():
     ap.add_argument("--tau-c", type=float, default=None); ap.add_argument("--half-life", type=float, default=None)
     a = ap.parse_args()
     check_r(a.R)
-    p = pickle.load(open(a.package, "rb"))                     # {"units", "title_vectors", "meta"}: this host's copies
+    p = pickle_load(a.package)                     # {"units", "title_vectors", "meta"}: this host's copies
     hostlist = json.load(open(a.hostlist))
     host = RepHost(p["units"], a.expert, a.name, a.extract, True, {k: p["title_vectors"][k] for k in p["units"]})
     host.state_dir = a.state

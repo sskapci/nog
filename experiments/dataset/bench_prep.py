@@ -30,6 +30,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+from mxn.common.safeload import pickle_load  # no code execution from data files (2026-11-20)
 from experiments.dataset import demo_gen as G                      # noqa: E402
 
 FORGET_SEED, EDIT_SEED = 20261121, 20261122
@@ -57,7 +58,7 @@ def answers(kb: dict, typ: str, head: str) -> list[str]:
 
 
 def main(a3: Path, data: Path, ex: Path, ids: Path, out: Path) -> None:
-    P = pickle.load(open(a3 / "pool.pkl", "rb"))
+    P = pickle_load(a3 / "pool.pkl")
     kb = json.load(open(a3 / "kb.json"))["kb"]
     D = {r["_id"]: r for r in json.load(open(data / "dev.json"))}
     GP = json.load(open(ex / "gold_plans.json"))

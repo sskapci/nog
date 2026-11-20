@@ -26,6 +26,7 @@ import torch.nn.functional as F
 from mxn.expert.bm25 import BM25
 from mxn.expert.encoder import BiEncoder, n_params, pad
 from mxn.expert.retrieval_eval import first_k_titles, recall
+from mxn.common.safeload import pickle_load  # no code execution from data files (2026-11-20)
 
 opts = dict(a[2:].split("=", 1) for a in sys.argv if a.startswith("--"))
 ex, out = Path(sys.argv[1]), Path(sys.argv[2]); out.mkdir(parents=True, exist_ok=True)
@@ -41,7 +42,7 @@ def say(m):
 
 
 t0 = time.time()
-pairs = pickle.load(open(ex / "pairs_fit.pkl", "rb"))
+pairs = pickle_load(ex / "pairs_fit.pkl")
 hard = []
 cache = {}
 for kind, q, t, pos, negs in pairs:                 # BM25 over the question's own context sentences
@@ -52,13 +53,13 @@ for kind, q, t, pos, negs in pairs:                 # BM25 over the question's o
         cache.clear(); cache[key] = BM25([s for _, s in negs])
     hard.append(negs[int(np.argmax(cache[key].scores([q])[0]))])     # (title, sentence)
 say(f"{len(pairs)} pairs, hard negatives in {time.time() - t0:.0f}s")
-M = pickle.load(open(ex / "pool_mdev.pkl", "rb"))
+M = pickle_load(ex / "pool_mdev.pkl")
 
 config = dict(vocab=sp.get_piece_size())
 net = BiEncoder(**config)
 START = 0
 if "resume" in opts:
-    rk = torch.load(opts["resume"], map_location="cpu")
+    rk = torch.load(opts["resume"], map_location="cpu", weights_only=True)
     net.load_state_dict(rk["state"]); START = rk["step"]
     say(f"resumed from {opts['resume']} at step {START}")
 say(f"parameters: {n_params(net)}")

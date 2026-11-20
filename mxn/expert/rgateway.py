@@ -26,6 +26,7 @@ from mxn.expert.ops import answer as template
 from mxn.expert.pipeline import Expert
 from mxn.common.textkeys import _DISAMBIG
 from mxn.common.frames import frame, open_conn, read_frame
+from mxn.common.safeload import torch_load  # no code execution from data files (2026-11-20)
 
 
 class HostsClient:
@@ -208,7 +209,7 @@ def load_resolve_gateway(ex, entity_form: str = "title", planner_dir: str = "pla
     ex = Path(ex)
     sp = spm.SentencePieceProcessor(model_file=str(ex / "tok16k.model"))
     enc = Encoder(str(ex / "enc"), str(ex / "tok16k.model"))
-    ck = torch.load(ex / planner_dir / "planner.pt", map_location="cpu", weights_only=False)
+    ck = torch_load(ex / planner_dir / "planner.pt")
     planner = Planner(ck["relations"], ck["trunk"]); planner.load_state_dict(ck["state"]); planner.eval()
     equiv = json.load(open(ex / "country_table.json"))["table"]
     return ResolveGateway(planner, sp, enc, equiv, entity_form, client, degraded)

@@ -27,6 +27,7 @@ from experiments.expert.plans import span_key
 from mxn.expert.encoder import n_params, pad
 from mxn.expert.para_grammar import paraphrase
 from mxn.expert.planner import OPS, TAGS, TEMPLATES, Planner, load_planner, pieces, predict, tag_targets
+from mxn.common.safeload import torch_load  # no code execution from data files (2026-11-20)
 
 opts = dict(a[2:].split("=", 1) for a in sys.argv if a.startswith("--"))
 ex, enc_dir, out = [Path(a) for a in sys.argv[1:] if not a.startswith("--")][:3]
@@ -92,7 +93,7 @@ if opts["stage"] == "train":
                        | {r["plan"]["r3"] for r in fit if r["plan"].get("r3")})
     templates = TEMPLATES + sorted({r["plan"]["template"] for r in fit} - set(TEMPLATES))   # 2Wiki: unchanged
     R3 = any("r3" in r["plan"] for r in fit)
-    ck = torch.load(enc_dir / "model.pt", map_location="cpu")
+    ck = torch.load(enc_dir / "model.pt", map_location="cpu", weights_only=True)
     net = Planner(relations, ck["config"], templates, R3); net.trunk.load_state_dict(ck["state"])
     say(f"{len(fit)} clean fit plans, {len(relations)} relations; parameters: {n_params(net)} (trunk {n_params(net.trunk)})")
     def example(q, p):
@@ -125,7 +126,7 @@ if opts["stage"] == "train":
     sched = torch.optim.lr_scheduler.LambdaLR(opt, lambda s: min(1, (s + 1) / 500))
     best, step, order, pos_i, used = (-1, None), 0, rng.permutation(len(X)), 0, 0.0
     if "resume" in opts and (out / "resume.pt").exists():
-        rs = torch.load(out / "resume.pt", map_location="cpu", weights_only=False)
+        rs = torch_load(out / "resume.pt")
         net.load_state_dict(rs["net"]); opt.load_state_dict(rs["opt"]); sched.load_state_dict(rs["sched"])
         best, step, order, pos_i, used = tuple(rs["best"]), rs["step"], rs["order"], rs["pos_i"], rs["used"]
         rng.bit_generator.state = rs["rng"]; torch.set_rng_state(rs["torch_rng"]); grng.setstate(rs["grng"])
@@ -180,7 +181,7 @@ if opts["stage"] == "train":
             break
     say(f"done: {step} steps in {(time.time() - t0) / 3600:.2f} h; best step {best[1]} mdev exact {best[0]}")
 else:
-    ck = torch.load(out / "planner.pt", map_location="cpu")
+    ck = torch.load(out / "planner.pt", map_location="cpu", weights_only=True)
     net = load_planner(ck)
     rows = load(opts["stage"] if opts["stage"] != "test" else "test")
     res, detail = evaluate(net, rows)

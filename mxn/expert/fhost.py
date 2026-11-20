@@ -48,6 +48,7 @@ import pickle
 import threading
 
 from mxn.common.frames import frame, open_conn, read_frame, serve
+from mxn.common.safeload import pickle_load, torch_load  # no code execution from data files (2026-11-20)
 
 FIND, FOUND, EDIT, ADD, DROP, OK, ANNOUNCE, TITLES, EDITV, DETACH, ATTACH = 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11
 RESOLVE, RESOLVED, VIA, VIAR, MOVE, IMPORT, WHO = 12, 13, 14, 15, 16, 17, 18
@@ -68,7 +69,7 @@ class FindHost:
         self.units, self.name = units, name                      # {k: (title, sentences)}
         self.detached, self.expert_dir = {}, expert_dir
         self.sp = spm.SentencePieceProcessor(model_file=f"{expert_dir}/tok16k.model")
-        ck = torch.load(f"{expert_dir}/{extract_dir}/extractor.pt", map_location="cpu", weights_only=False)
+        ck = torch_load(f"{expert_dir}/{extract_dir}/extractor.pt")
         self.net = Extractor(ck["trunk"]); self.net.load_state_dict(ck["state"]); self.net.eval()
         self.t = json.load(open(f"{expert_dir}/{extract_dir}/threshold.json"))["t"]
         self.connections: dict[int, list] = {}                    # per source KU: outgoing connections (chapter 3)
@@ -339,7 +340,7 @@ def main():
     ap.add_argument("--extract", default="extract2"); ap.add_argument("--index", action="store_true")
     ap.add_argument("--state", default=None, help="directory for the host's persisted id counter")
     a = ap.parse_args()
-    shard = pickle.load(open(a.shard, "rb"))
+    shard = pickle_load(a.shard)
     if "units" in shard and "title_vectors" in shard:          # KU packages: sentences + each KU's own title vector
         host = FindHost(shard["units"], a.expert, a.name, a.extract, a.index, shard["title_vectors"])
     else:

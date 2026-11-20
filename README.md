@@ -14,11 +14,15 @@ touching anything else — on ordinary CPUs.
 
 This is a research prototype, not a product. See *Limits* below.
 
-> **Security warning.** In this release, host ports accept data that can execute code: KU packages sent between
-> hosts and cold copies are opened with Python pickle, so anyone who can send data to a host port can run arbitrary
-> code on that machine. **Never make host ports reachable from an untrusted network** — run NOG only on one machine
-> or inside a network where only your own hosts can connect. A fixed release (no pickle; JSON + safetensors) is in
-> preparation.
+> **Security notice.** Release snapshot 2026-11-19 and the source archives of earlier jobs (`mxn-src-*.tar.gz`)
+> open KU packages and cold copies with Python pickle: on those versions, anyone who can send data to a host port can
+> run arbitrary code on that machine. **This release (2026-11-20) fixes that:** KU packages, cold copies and
+> checkpoints use a non-executable format (JSON header with a fixed, validated schema + safetensors;
+> `mxn/neuron/kupack.py`), every other data file is read through a restricted loader (`mxn/common/safeload.py`), and
+> a test checks that a malicious package is refused (`tests/test_kupack.py`). Answers are identical before and after
+> the fix (replay of the dry-run sets, a cold-copy run with two host deaths, and a rebalancing run). Frames between
+> hosts are still neither authenticated nor encrypted: **never make host ports reachable from an untrusted network**,
+> and run the old job archives (Reproduce) only on an isolated machine.
 
 ## Architecture
 
@@ -97,7 +101,7 @@ for per-question latency, intervals and full details.
 - Facts expressed only by document layout (e.g. dates in parentheses) are largely unlearnable when each KU learns only from its own text.
 - The planner fails on question wordings it hasn't seen.
 - Tested on template-style questions, on one machine.
-- No authentication or encryption between hosts, and host ports accept data that can execute code (see the security warning above): trusted networks only.
+- No authentication or encryption between hosts (see the security notice above): trusted networks only. Versions before 2026-11-20, including the job archives used for reproduction, also accept data on host ports that can execute code.
 
 ## Quick start
 

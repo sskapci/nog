@@ -20,6 +20,7 @@ from scipy.stats import binomtest
 from mxn.expert.encoder import n_params, pad
 from mxn.expert.extractor import DATE_RELS, Extractor, bio, dates_rule, decode, encode_input, piece_scores
 from mxn.expert.ops import normalize
+from mxn.common.safeload import pickle_load, torch_load  # no code execution from data files (2026-11-20)
 
 opts = dict(a[2:].split("=", 1) for a in sys.argv if a.startswith("--"))
 ex, enc_dir, out = [Path(a) for a in sys.argv[1:] if not a.startswith("--")][:3]
@@ -78,10 +79,10 @@ def summary(res):
 
 stage = opts["stage"]
 if stage == "train":
-    X = pickle.load(open(ex / "extract_fit.pkl", "rb"))
-    mdev = pickle.load(open(ex / "extract_eval.pkl", "rb"))["mdev"]
+    X = pickle_load(ex / "extract_fit.pkl")
+    mdev = pickle_load(ex / "extract_eval.pkl")["mdev"]
     random.Random(20261205).shuffle(mdev); mdev_sel = mdev[:3000]          # the v1 subset
-    ck = torch.load(enc_dir / "model.pt", map_location="cpu")
+    ck = torch.load(enc_dir / "model.pt", map_location="cpu", weights_only=True)
     net = Extractor(ck["config"]); net.trunk.load_state_dict(ck["state"])
     S = [(rel, t, s, sp_) for rel, t, sents, spans in X for s, sp_ in zip(sents, spans)]
     n_r = Counter(x[0] for x in S)
@@ -125,9 +126,9 @@ if stage == "train":
             break
     say(f"done: {step} steps in {(time.time() - t0) / 3600:.2f} h (cap hit: {step < STEPS}); best step {best[1]} mdev exact {best[0]}")
 else:
-    ck = torch.load(out / "extractor.pt", map_location="cpu", weights_only=False)
+    ck = torch_load(out / "extractor.pt")
     net = Extractor(ck["trunk"]); net.load_state_dict(ck["state"])
-    E = pickle.load(open(ex / "extract_eval.pkl", "rb"))
+    E = pickle_load(ex / "extract_eval.pkl")
     if stage == "threshold":
         res = evaluate(net, E["mdev"], GRID, True)
         grid = {t: summary(r)["all"]["em"] for t, r in res.items()}
